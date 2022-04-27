@@ -1,12 +1,7 @@
-import random
-import asyncio
 import time
 from datetime import datetime
-from speedtest import Speedtest
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS, StartTime, bot
-from userbot.events import register
-from userbot.utils import edit_or_reply, humanbytes, cilik_cmd
+from userbot import StartTime
+from userbot.utils import cilik_cmd
 
 
 async def get_readable_time(seconds: int) -> str:
