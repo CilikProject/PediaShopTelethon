@@ -93,9 +93,9 @@ CMD_HELP.update(
     {
         "Blacklist": f"**➢ Plugin : **`Blacklist`\
         \n\n **ᴄᴍᴅ :** `{cmd}listbl`\
-        \n └❒ Melihat daftar blacklist yang aktif di obrolan.\
+        \n └⋟ Melihat daftar blacklist yang aktif di obrolan.\
         \n\n **ᴄᴍᴅ :** `{cmd}addbl` <kata>\
-        \n └❒ Memasukan pesan ke blacklist 'kata blacklist'.\
+        \n └⋙ Memasukan pesan ke blacklist 'kata blacklist'.\
         \n\n **ᴄᴍᴅ :** `{cmd}rmbl` <kata>\
         \n └❒ Menghapus kata blacklist.\
     "
