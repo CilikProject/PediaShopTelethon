@@ -99,3 +99,4 @@ CMD_HELP.update(
         \n └❒ Menculik Member dari Grup Lain ke Grup chat Anda.\
     "
     }
+)
