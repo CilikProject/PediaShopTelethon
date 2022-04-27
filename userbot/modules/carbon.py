@@ -163,7 +163,7 @@ all_col = [
 @cilik_cmd(pattern="(rc|c)arbon")
 async def crbn(event):
     from_user = vcmention(event.sender)
-    xxxx = await edit_or_reply(event, "`Processing...`")
+    xxxx = await event.reply("`Carboning...`")
     te = event.text
     col = choice(all_col) if te[1] == "r" else "Grey"
     if event.reply_to_msg_id:
@@ -227,7 +227,7 @@ async def ccrbn(event):
 
 CMD_HELP.update(
     {
-        "carbon": f"**➢ Plugin : **`carbon`\
+        "Carbon": f"**➢ Plugin : **`Carbon`\
         \n\n **ᴄᴍᴅ :** `{cmd}carbon` <text/reply>\
         \n └❒ Carbonisasi teks dengan pengaturan default.\
         \n\n **ᴄᴍᴅ :** `{cmd}rcarbon` <text/reply>\
