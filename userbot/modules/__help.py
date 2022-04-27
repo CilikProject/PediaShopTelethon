@@ -29,7 +29,7 @@ CUSTOM_HELP_EMOJI = "✘"
 
 @cilik_cmd(pattern="help ?(.*)")
 async def cmd_list(event):
-    args = event.pattern_match.group(1).lower()
+    args = event.pattern_match.group(1)
     if args:
         if args in CMD_HELP:
             await edit_or_reply(event, f"**✘ Commands available in {args} ✘** \n\n" + str(CMD_HELP[args]) + "\n\n**© @CilikProject**")
