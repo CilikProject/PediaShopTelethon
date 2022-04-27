@@ -134,7 +134,7 @@ PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "True"))
 PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 
 # Custom Handler command
-CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+CMD_HANDLER = os.environ.get("CMD_HANDLER", ".", "!", "^")
 
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
@@ -234,7 +234,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "CilikUserbot")
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "1.1")
+BOT_VER = os.environ.get("BOT_VER", "V.2")
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
