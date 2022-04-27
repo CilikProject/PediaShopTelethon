@@ -72,7 +72,7 @@ async def quotly(event):
 
 CMD_HELP.update(
     {
-        "quotly": f"➢ Plugin : quotly\
+        "Quotly": f"➢ Plugin : Quotly\
         \n\n **ᴄᴍᴅ :** `{cmd}q`\
         \n └❒ Membuat pesan menjadi sticker dengan random background.\
         \n\n **ᴄᴍᴅ :** `{cmd}q <angka>`\
