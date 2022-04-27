@@ -4,9 +4,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-# inline credit @keselekpermen69
-# From Man-Userbot @mrismanaziz
-# Recode by @greyyvbss
+# cilik-ubot v2
 """ Userbot initialization. """
 
 import logging
@@ -101,15 +99,6 @@ if CONFIG_CHECK:
 
 DEVS = (
     1784606556, 
-    2046879193,
-    844432220,  
-    1820233416, 
-    1540632666, 
-    1883126074, 
-    1977874449, 
-    1416529201,
-    2130526178,
-    1700405732,
 )
 
   
@@ -420,13 +409,10 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⪻", data="{}_prev({})".format(prefix, modulo_page)
+                    "«", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "🗑️", data="{}_close({})".format(prefix, modulo_page)
-                ),
-                custom.Button.inline(
-                    "⪼", data="{}_next({})".format(prefix, modulo_page)
+                    "»", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -454,26 +440,30 @@ with bot:
         user = bot.get_me()
         uid = user.id
         owner = user.first_name
-        asst = tgbot.get_me()
-        botusername = asst.username
         logo = ALIVE_LOGO
-        ciliklogo = ALIVE_LOGO
-        cmd = CMD_HANDLER
+        ciliklogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
-       
-        main_help_button = [
-            [
-                Button.inline("🗂️ ᴘʟᴜɢɪɴ", data="reopen"),       
-                Button.url("ꜱᴇᴛᴛɪɴɢ ⚙️", f"t.me/{botusername}"),
-            ],
-            [Button.inline("🗑️ ᴄʟᴏꜱᴇ", data="close")],
-        ]
 
-        
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                current_page_number = int(looters)
+                buttons = paginate_help(
+                    current_page_number, dugmeler, "helpme")
+                text = f"**Cilik Help Module ❓**\n**Owner :** [{user.first_name}](tg://user?id={user.id})"
+                await event.edit(
+                    text,
+                    file=ciliklogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Lu ga di izinkan gblk, ini userbot milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
         async def bot_pms(event):
@@ -545,46 +535,6 @@ with bot:
                                 f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
                             )
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"get_back")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(looters)
-                buttons = paginate_help(
-                    current_page_number, dugmeler, "helpme")
-                text = f"**Cilik Help Module ❓**\n**Owner :** [{user.first_name}](tg://user?id={user.id})",
-                await event.edit(
-                    text,
-                    file=ciliklogo,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"reopen")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"**Cilik Help Module ❓**\n**Owner :** [{user.first_name}](tg://user?id={user.id})"
-                await event.edit(
-                    text,
-                    file=ciliklogo,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
@@ -595,20 +545,20 @@ with bot:
                 result = await event.builder.photo(
                     file=ciliklogo,
                     link_preview=False,
-                    text = f"**Cilik Help Module ❓**\n**Owner :** [{user.first_name}](tg://user?id={user.id})",
-                    buttons=main_help_button,
+                    text=f"**Cilik Help Module ❓**\n**Owner :** [{user.first_name}](tg://user?id={user.id})",
+                    buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
                     description="Repository Cilik - Userbot",
-                    url="https://t.me/CilikSupport",
+                    url="https://t.me/CilikProject",
                     thumb=InputWebDocument(
-                        ALIVE_LOGO,
+                        INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text="**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **Owner Repo :** [Grey </>](https://t.me/greyyvbss)\n✪ **Support :** @CilikSupport\n✪ **Repository :** [Cilik-Userbot](https://github.com/grey423/CilikUserbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Cilik - Userbot**\n≫≫≫≫≫≫≫≫≫≫\n⌬ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [Grey](https://t.me/greyyvbss)\n⌬ **sᴜᴘᴘᴏʀᴛ :** @CilikSupport\n⌬ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Cilik-Userbot](https://github.com/grey423/CilikUserbot)\n≫≫≫≫≫≫≫≫≫≫",
                     buttons=[
                         [
                             custom.Button.url(
@@ -616,11 +566,12 @@ with bot:
                                 "https://t.me/CilikSupport"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
-                                "https://github.com/grey423/CilikUserbot"),
+                                "https://github.com/grey423/Cilik-Userbot"),
                         ],
                     ],
                     link_preview=False,
                 )
+
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
@@ -655,23 +606,23 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✨ Cilik-Userbot ✨",
-                    description="Cilik - Userbot | Telethon",
-                    url="https://t.me/CilikSupport",
+                    title="⚡ Cilik - Ubot ⚡",
+                    description="Cilik Userbot | Telethon",
+                    url="https://t.me/CilikProject",
                     thumb=InputWebDocument(
                         ALIVE_LOGO,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✪ **Owner :** [{user.first_name}](tg://user?id={user.id})\n✪ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Updates:** @CilikProject\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Cilik-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n⌬ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n⌬ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @CilikProject\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
-                                "Groups",
+                                "ɢʀᴏᴜᴘ",
                                 "https://t.me/CilikSupport"),
                             custom.Button.url(
-                                "Repo",
-                                "https://github.com/grey423/CilikUserbot"),
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/grey423/Cilik-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -698,91 +649,17 @@ with bot:
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_close\((.+?)\)")
-            )
-        )
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
-                # https://t.me/TelethonChat/115200                               # @Fliks-Userbot
+            if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
+                openlagi = custom.Button.inline(
+                    "• Re-Open Menu •", data="reopen")
                 await event.edit(
-                    file=ciliklogo,
-                    link_preview=True,
-                    buttons=main_help_button)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"gcback")
-            )
-        )
-        async def gback_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
-                # https://t.me/TelethonChat/115200                               # @Fliks-Userbot    
-                text = (
-                    f"**🕹️ Cilik-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**")
-                await event.edit(
-                    text,
-                    file=ciliklogo,
-                    link_preview=True,
-                    buttons=main_help_button)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"cilik_inline")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                text = (
-                    f"""
-     🎧 **VC-Plugin Menu** 🎧
-
-┌✪ **Syntax   :** {cmd}play <Judul Lagu>
-└✪ **Function :** Untuk Memutar Lagu
- 
-┌✪ **Syntax   :** {cmd}vplay <Judul Video>
-└✪ **Function :** Untuk Memutar Video 
-  
-┌✪ **Syntax   :** {cmd}end
-└✪ **Function :** Untuk Menghentikan Lagu/Video
- 
-┌✪ **Syntax   :** {cmd}skip
-└✪ **Function :** Untuk Melewati Video/Lagu 
-  
-┌✪ **Syntax   :** {cmd}pause
-└✪ **Function :** Untuk memberhentikan video/lagu
-  
-┌✪ **Syntax   :** {cmd}resume
-└✪ **Function :** Untuk melanjutkan pemutaran video/lagu
-  
-┌✪ **Syntax   :** {cmd}volume 1-200
-└✪ **Function :** Untuk mengubah volume
- 
-┌✪ **Syntax   :** {cmd}playlist
-└✪ **Function :** Untuk menampilkan daftar putar
-
-┌✪ **Syntax   :** {cmd}joinvc
-└✪ **Function :** Untuk Join Vcg Menggunakan bot
-
-┌✪ **Syntax   :** {cmd}leavevc
-└✪ **Function :** Untuk Turun Vcg Menggunakan bot
-""")
-                await event.edit(
-                    text,
-                    file=ciliklogo,
-                    link_preview=True,
-                    buttons=[Button.inline("🔙 Back", data="gcback")])
+                    "⚡ **ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴅɪᴛᴜᴛᴜᴘ!** ⚡", buttons=openlagi
+                )
             else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(events.CallbackQuery(data=b"close"))
-        async def close(event):
-            buttons = [
-                (custom.Button.inline("• Rᴇ-Oᴘᴇɴ Mᴇɴᴜ •", data="gcback"),),
-            ]
-            await event.edit("**• Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ •**", file=ciliklogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -814,6 +691,7 @@ with bot:
                         + modul_name
                         + " "
                     )
+
                 else:
                     help_string = str(CMD_HELP[modul_name])
 
@@ -825,9 +703,8 @@ with bot:
                     )
                 )
                 await event.edit(
-                    reply_pop_up_alert, buttons=[Button.inline("🔙 ʙᴀᴄᴋ", data="reopen")]
+                    reply_pop_up_alert, buttons=[Button.inline("Back", data="reopen")]
                 )
-
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
