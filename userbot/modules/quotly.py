@@ -13,8 +13,8 @@ from userbot.utils.misc import create_quotly
 async def quotly(event):
     match = event.pattern_match.group(1).strip()
     if not event.is_reply:
-        return await edit_delete(event, "Mohon Balas ke Pesan")
-    msg = await edit_or_reply(event, "Processing...")
+        return await event.reply("Reply to Message")
+    msg = await event.reply("Processing...")
     reply = await event.get_reply_message()
     replied_to, reply_ = None, None
     if match:
