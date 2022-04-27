@@ -23,7 +23,7 @@ async def _(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
     if not input_str and not reply_message:
-        await event.reply("`Reply to Users..`", 90)
+        await event.reply("`Reply to Users..`")
     user, rank = await get_user_from_event(event, secondgroup=True)
     if not user:
         return
