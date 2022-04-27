@@ -2,7 +2,7 @@ from telethon.utils import pack_bot_file_id
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, LOGS
-from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
+from userbot.utils import edit_delete, cilik_cmd
 from userbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
@@ -18,24 +18,23 @@ async def _(event):
             return await edit_delete(event, f"`{e}`", 5)
         try:
             if p.first_name:
-                return await edit_or_reply(
-                    event, f"**User ID {input_str} adalah** `{p.id}`"
+                return await event.reply(
+                    f"User ID {input_str} adalah `{p.id}`"
                 )
         except Exception:
             try:
                 if p.title:
-                    return await edit_or_reply(
-                        event, f"**ID {p.title} adalah** `{p.id}`"
+                    return await event.reply(
+                        f"ID {p.title} adalah `{p.id}`"
                     )
             except Exception as e:
                 LOGS.info(str(e))
-        await edit_or_reply(event, "**Berikan Username atau Reply ke pesan pengguna**")
+        await event.reply("`Berikan Username atau Reply ke pesan pengguna`")
     elif event.reply_to_msg_id:
         r_msg = await event.get_reply_message()
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
-            await edit_or_reply(
-                event,
+            await event.reply(
                 "**💬 Message ID:** `{}`\n**🙋‍♂️ From User ID:** `{}`\n**💎 Bot API File ID:** `{}`".format(
                     str(r_msg.id),
                     str(r_msg.sender_id),
@@ -44,15 +43,14 @@ async def _(event):
             )
 
         else:
-            await edit_or_reply(
-                event,
+            await event.reply(
                 "**👥 Chat ID:** `{}`\n**💬 Message ID:** `{}`\n**🙋‍♂️ From User ID:** `{}`".format(
                     str(event.chat_id), str(r_msg.id), str(r_msg.sender_id)
                 ),
             )
 
     else:
-        await edit_or_reply(event, f"**👥 Chat ID: **`{event.chat_id}`")
+        await event.reply(f"**👥 Chat ID: **`{event.chat_id}`")
 
 
 CMD_HELP.update(
