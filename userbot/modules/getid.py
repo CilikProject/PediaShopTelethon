@@ -55,7 +55,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "getid": f"**➢ Plugin : **`getid`\
+        "GetId": f"**➢ Plugin : **`GetId`\
         \n\n **ᴄᴍᴅ :** `{cmd}id` <username/reply>\
         \n └❒ Untuk Mengambil Chat ID obrolan saat ini\
         \n\n **ᴄᴍᴅ :** `{cmd}userid` <username/reply>\
