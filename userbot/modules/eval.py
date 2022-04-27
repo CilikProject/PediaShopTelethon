@@ -200,15 +200,15 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "eval": f"**➢ Plugin : **`eval`\
+        "Eval": f"**➢ Plugin : ** `Eval`\
         \n\n **ᴄᴍᴅ :** `{cmd}eval` <cmd>\
         \n └❒ Evaluasi ekspresi Python dalam argumen skrip yang sedang berjalan\
         \n\n **ᴄᴍᴅ :** `{cmd}json` <reply ke pesan>\
         \n └❒ **Untuk mendapatkan detail pesan dalam format json\
         \n\n **ᴄᴍᴅ :** `{cmd}term` <cmd>\
-        \n └❒ Jalankan perintah dan skrip bash di server Anda.\
-        \n\n **ᴄᴍᴅ :** `{cmd}exec print('hello')`\
-        \n └❒ Jalankan skrip python kecil di subproses.\
+        \n └❒ Jalankan perintah dan skrip bash di server Anda\
+        \n\n **ᴄᴍᴅ :** `{cmd}exec` print('hello')\
+        \n └❒ Jalankan skrip python kecil di subproses\
     "
     }
 )
