@@ -208,7 +208,7 @@ CMD_HELP.update(
         \n\n **ᴄᴍᴅ :** `{cmd}term` <cmd>\
         \n └❒ Jalankan perintah dan skrip bash di server Anda.\
         \n\n **ᴄᴍᴅ :** `{cmd}exec print('hello')`\
-        \n └❒ Jalankan skrip python kecil di subproses.\        
+        \n └❒ Jalankan skrip python kecil di subproses.\
     "
     }
 )
