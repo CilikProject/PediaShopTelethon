@@ -186,7 +186,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "afk": f"**➢ Plugin : **`afk`\
+        "Afk": f"**➢ Plugin : **`Afk`\
         \n\n **ᴄᴍᴅ :** `{cmd}afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
         \n └❒ Memberi tahu kalau Master sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
         \n\n**ᴄᴍᴅ :** `{cmd}off`\
