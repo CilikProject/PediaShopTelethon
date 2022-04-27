@@ -78,7 +78,7 @@ async def tede_chatbot(event):
 
 CMD_HELP.update(
     {
-        "chatbot": f"**➢ Plugin : **`chatbot`\
+        "ChatBot": f"**➢ Plugin : **`ChatBot`\
       \n\n **ᴄᴍᴅ :** `{cmd}chatbot` <on/off>\
       \n └❒ Untuk membalas chat dengan chatbot AI.\
       "
