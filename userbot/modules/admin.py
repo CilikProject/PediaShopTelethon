@@ -594,7 +594,7 @@ async def _iundlt(event):
 
 CMD_HELP.update(
     {
-        "admin": f"**➢ Plugin : **`admin`\
+        "Admin": f"**➢ Plugin : **`Admin`\
         \n\n **ᴄᴍᴅ :** `{cmd}promote <username/reply> <nama title (optional)>`\
         \n └❒ Mempromosikan member sebagai admin.\
         \n\n **ᴄᴍᴅ :** `{cmd}demote <username/balas ke pesan>`\
@@ -621,7 +621,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "pin": f"**➢ Plugin : **`pin`\
+        "Pinned": f"**➢ Plugin : **`Pinned`\
         \n\n **ᴄᴍᴅ :** `{cmd}pin` <reply chat>\
         \n └❒ Untuk menyematkan pesan dalam grup.\
         \n\n **ᴄᴍᴅ :** `{cmd}pin loud` <reply chat>\
