@@ -244,3 +244,15 @@ async def upstream(event):
         await asyncio.sleep(10)
         await xx.delete()
     return
+
+
+CMD_HELP.update(
+    {
+        "Updater": f"**➢ Plugin : **`Updater`\
+        \n\n **ᴄᴍᴅ :** `{cmd}update`\
+        \n └✪ Untuk Melihat Pembaruan Terbaru ⚡ Cilik-Userbot ⚡.\
+        \n\n **ᴄᴍᴅ :** `{cmd}update deploy`\
+        \n └✪ Untuk MengUpdate Fitur Terbaru Dari ⚡ Cilik-Userbot ⚡.\
+    "
+    }
+)
