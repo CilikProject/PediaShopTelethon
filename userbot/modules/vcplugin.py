@@ -473,7 +473,7 @@ async def kickedvc(_, chat_id: int):
 
 CMD_HELP.update(
     {
-        "vcplugin": f"**➢ Plugin : **`vcplugin`\
+        "VcPlugin": f"**➢ Plugin : **`VcPlugin`\
         \n\n **ᴄᴍᴅ :** `{cmd}play` <Judul Lagu/Link YT>\
         \n └❒ Untuk Memutar Lagu di voice chat group dengan akun kamu\
         \n\n **ᴄᴍᴅ :** `{cmd}vplay` <Judul Video/Link YT>\
