@@ -199,7 +199,7 @@ async def rem_locks(event):
 
 CMD_HELP.update(
     {
-        "locks": f"**Plugin : **`locks`\
+        "Locks": f"**Plugin : **`Locks`\
         \n\n **ᴄᴍᴅ :** `{cmd}lock` <all atau Jenis lock>\
         \n └❒ **Function : **Memungkinkan anda Mengunci beberapa jenis pesan dalam obrolan.\
         \n\n **ᴄᴍᴅ :** `{cmd}unlock` <all atau Jenis lock>\
