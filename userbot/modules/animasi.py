@@ -1133,7 +1133,7 @@ async def _(event):
     
 CMD_HELP.update(
     {
-    "animasi": f"**➢ Plugin : **`animasi`\
+    "Animasi": f"**➢ Plugin : **`Animasi`\
     \n\n **ᴄᴍᴅ :** `{cmd}gabut`\
     \n └❒ buat bercanda\
     \n\n **ᴄᴍᴅ :** `{cmd}dino`\
