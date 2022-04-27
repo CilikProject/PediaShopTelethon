@@ -236,3 +236,4 @@ CMD_HELP.update(
         \n └❒ Carbonisasi teks, dengan warna background custom.\
     "
     }
+)
