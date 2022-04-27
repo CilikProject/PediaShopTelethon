@@ -197,7 +197,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "gban": f"**➢ Plugin : **`gban`\
+        "Gban": f"**➢ Plugin : **`Gban`\
         \n\n **ᴄᴍᴅ :** `{cmd}gban` <username/id>\
         \n └❒ Melakukan Banned Secara Global Ke Semua Grup Dimana anda Sebagai Admin.\
         \n\n **ᴄᴍᴅ :** `{cmd}ungban` <username/id>\
