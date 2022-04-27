@@ -48,7 +48,7 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await edit_delete(event, "**Berikan Sebuah Pesan atau Reply**")
+        return await event.reply("**Berikan Sebuah Pesan atau Reply**")
     kk = await edit_or_reply(event, "`Globally Broadcasting Msg...`")
     er = 0
     done = 0
@@ -177,7 +177,7 @@ async def _(event):
         
 CMD_HELP.update(
     {
-        "gcast": f"**➢ Plugin : **`gcast`\
+        "Gcast": f"**➢ Plugin : **`Gcast`\
         \n\n **ᴄᴍᴅ :** `{cmd}gcast` <text/reply media>\
         \n └❒ Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
         \n\n **ᴄᴍᴅ :** `{cmd}blchat`\
