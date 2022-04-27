@@ -241,11 +241,11 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/ac134f6d295ad0c03af9b.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/e2100e87ee152baa85dc2.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/1c2e118ce95103fd440c3.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/e2100e87ee152baa85dc2.jpg"
 )
 
 # Picture For VCPLUGIN
