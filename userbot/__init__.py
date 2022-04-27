@@ -212,7 +212,7 @@ ALIVE_NAME = os.environ.get("ALIVE_NAME", "Cilik-Userbot")
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "✪")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "🍭")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "")
 
 # Custom icon HELP
 ICON_HELP = os.environ.get("ICON_HELP", "✪")
