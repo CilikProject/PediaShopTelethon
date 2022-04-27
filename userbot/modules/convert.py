@@ -142,7 +142,7 @@ async def makevoice(event):
 
 CMD_HELP.update(
     {
-        "convert": f"**➢ Plugin : **`core`\
+        "Convert": f"**➢ Plugin : **`Convert`\
         \n\n **ᴄᴍᴅ :** `{cmd}convert foto`\
         \n └❒ Untuk Mengconvert sticker ke foto\
         \n\n **ᴄᴍᴅ :** `{cmd}convert mp3`\
