@@ -91,7 +91,7 @@ async def on_delete_blacklist(rmbl):
 
 CMD_HELP.update(
     {
-        "blacklist": f"**➢ Plugin : **`blacklist`\
+        "Blacklist": f"**➢ Plugin : **`Blacklist`\
         \n\n **ᴄᴍᴅ :** `{cmd}listbl`\
         \n └❒ Melihat daftar blacklist yang aktif di obrolan.\
         \n\n **ᴄᴍᴅ :** `{cmd}addbl` <kata>\
