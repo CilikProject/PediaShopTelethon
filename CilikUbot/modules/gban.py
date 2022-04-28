@@ -1,7 +1,7 @@
 # Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
 # Ported by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# ReCode by @greyyvbss
+# cilik - ubot v2
 
 import asyncio
 from datetime import datetime
@@ -11,12 +11,12 @@ from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import Channel
 
-import userbot.modules.sql_helper.gban_sql as gban_sql
-from userbot import BOTLOG_CHATID
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS
-from userbot.events import register
-from userbot.utils import chataction, edit_or_reply, get_user_from_event, cilik_cmd
+import CilikUbot.modules.sql_helper.gban_sql as gban_sql
+from CilikUbot import BOTLOG_CHATID
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, DEVS
+from CilikUbot.events import register
+from CilikUbot.utils import chataction, edit_or_reply, get_user_from_event, cilik_cmd
 
 from .admin import BANNED_RIGHTS, UNBAN_RIGHTS
 
@@ -190,20 +190,15 @@ async def _(event):
                 pass
 
 
-
-# Ported by @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-
-
 CMD_HELP.update(
     {
         "Gban": f"**➢ Plugin : **`Gban`\
         \n\n **ᴄᴍᴅ :** `{cmd}gban` <username/id>\
-        \n └❒ Melakukan Banned Secara Global Ke Semua Grup Dimana anda Sebagai Admin.\
+        \n └⋟ Melakukan Banned Secara Global Ke Semua Grup Dimana anda Sebagai Admin.\
         \n\n **ᴄᴍᴅ :** `{cmd}ungban` <username/id>\
-        \n └❒ Membatalkan Global Banned\
+        \n └⋟ Membatalkan Global Banned\
         \n\n **ᴄᴍᴅ :** `{cmd}listgban`\
-        \n └❒ Menampilkan List Global Banned\
+        \n └⋟ Menampilkan List Global Banned\
     "
     }
 )
