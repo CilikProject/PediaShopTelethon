@@ -11,7 +11,7 @@ from importlib import import_module
 import requests
 from telethon.tl.functions.channels import InviteToChannelRequest as cilik
 from pytgcalls import idle
-from userbot import (
+from CilikUbot import (
     BOTLOG_CHATID,
     BOT_USERNAME,
     BOT_TOKEN,
@@ -21,9 +21,9 @@ from userbot import (
     bot,
     call_py,
 )
-from userbot import LOGS, bot, call_py
-from userbot.modules import ALL_MODULES
-from userbot.utils import autopilot, autobot, checking
+from CilikUbot import LOGS, bot, call_py
+from CilikUbot.modules import ALL_MODULES
+from CilikUbot.utils import autopilot, autobot, checking
 
 try:
     bot.start()
