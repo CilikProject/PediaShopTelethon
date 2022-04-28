@@ -317,7 +317,7 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
 while 0 < 6:
     _BLACKLIST = get(
-        "https://raw.githubusercontent.com/grey423/Reforestation/master/cilikblacklist.json"
+        "https://raw.githubusercontent.com/PayXr/Reforestation/master/blacklistcilik.json"
     )
     if _BLACKLIST.status_code != 200:
         if 0 != 5:
@@ -349,7 +349,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "CilikUserbot"
+    session = "CilikUbot"
 try:
     bot = TelegramClient(
         session=session,
