@@ -5,81 +5,51 @@
 
 """ Userbot start point """
 
+
 import sys
 from importlib import import_module
+from platform import python_version
 
-import requests
-from telethon.tl.functions.channels import InviteToChannelRequest as cilik
+from pytgcalls import __version__ as pytgcalls
 from pytgcalls import idle
-from CilikUbot import (
-    BOTLOG_CHATID,
-    BOT_USERNAME,
-    BOT_TOKEN,
-    BOT_VER,
-    ALIVE_LOGO,
-    LOGS,
-    bot,
-    call_py,
-)
-from CilikUbot import LOGS, bot, call_py
+from telethon import version
+
+from CilikUbot import BOT_TOKEN
+from CilikUbot import BOT_VER as ubotversion
+from CilikUbot import BOTLOG_CHATID, LOGS, LOOP, bot
+from CilikUbot.clients import cilik_userbot_on, multicilik
+from CilikUbot.core.git import git
 from CilikUbot.modules import ALL_MODULES
-from CilikUbot.utils import autopilot, autobot, checking
+from CilikUbot.utils import autobot, autopilot
 
 try:
-    bot.start()
-    call_py.start()
-    user = bot.get_me()
-    cilikblacklist = requests.get(
-        "https://raw.githubusercontent.com/grey423/Reforestation/master/cilikblacklist.json"
-    ).json()
-    if user.id in cilikblacklist:
-        LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @greyyvbss"
-        )
-        sys.exit(1)
-except Exception as e:
+    for module_name in ALL_MODULES:
+        imported_module = import_module(f"CilikUbot.modules.{module_name}")
+    client = multicilik()
+    total = 10 - client
+    git()
+    LOGS.info(f"Total Clients = {total} User")
+    LOGS.info(f"Python Version - {python_version()}")
+    LOGS.info(f"Telethon Version - {version.__version__}")
+    LOGS.info(f"PyTgCalls Version - {pytgcalls.__version__}")
+    LOGS.info(f"Cilik-Ubot Version - {ubotversion} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
+except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
+    pass
+except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
 
-for module_name in ALL_MODULES:
-    imported_module = import_module("CilikUbot.modules." + module_name)
 
+LOOP.run_until_complete(cilik_userbot_on())
 if not BOTLOG_CHATID:
-    LOGS.info(
-        "BOTLOG_CHATID Vars tidak terisi, Memulai Membuat Grup Otomatis..."
-    )
-    bot.loop.run_until_complete(autopilot())
-
-LOGS.info(
-    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/CilikSupport")
-LOGS.info(
-    f"🔥 Cilik-Ubot 🔥 ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
-    
-async def cilik_userbot_on():
-    try:
-        if BOTLOG_CHATID != 0:
-            await bot.send_file(
-                BOTLOG_CHATID,
-                ALIVE_LOGO,
-                caption=f"🔥 **Cilik Ubot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - V.2 @Cilik-Ubot\n➠ **Ketik** `.ping` **Untuk Mengecek Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @CilikProject ",
-            )
-    except Exception as e:
-        LOGS.info(str(e))
-    try:
-        await bot(cilik(int(BOTLOG_CHATID), [BOT_USERNAME]))
-    except BaseException:
-        pass
-
-bot.loop.run_until_complete(checking())    
-bot.loop.run_until_complete(cilik_userbot_on())
+    LOOP.run_until_complete(autopilot())
 if not BOT_TOKEN:
-    LOGS.info(
-        "BOT_TOKEN Vars tidak terisi, Memulai Membuat BOT Otomatis di @Botfather..."
-    )
-    bot.loop.run_until_complete(autobot())
-
+    LOOP.run_until_complete(autobot())
 idle()
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-    bot.run_until_disconnected()
+    try:
+        bot.run_until_disconnected()
+    except ConnectionError:
+        pass
