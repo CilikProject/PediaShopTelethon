@@ -1,5 +1,4 @@
-# ©greyyvbss
-# https://github.com/grey423
+# cilik - ubot v2
 
 import asyncio
 import io
@@ -7,9 +6,9 @@ import os
 
 from PIL import Image
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, cilik_cmd, runcmd
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP
+from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd, runcmd
 
 
 @cilik_cmd(pattern="convert ?(foto|audio|gif|voice|photo|mp3)? ?(.*)")
@@ -144,13 +143,13 @@ CMD_HELP.update(
     {
         "Convert": f"**➢ Plugin : **`Convert`\
         \n\n **ᴄᴍᴅ :** `{cmd}convert foto`\
-        \n └❒ Untuk Mengconvert sticker ke foto\
+        \n └⋟ Untuk Mengconvert sticker ke foto\
         \n\n **ᴄᴍᴅ :** `{cmd}convert mp3`\
-        \n └❒ Untuk Mengconvert dari video ke file mp3\
+        \n └⋟ Untuk Mengconvert dari video ke file mp3\
         \n\n **ᴄᴍᴅ :** `{cmd}makevoice`\
-        \n └❒ Untuk Mengconvert audio ke voice note\
+        \n └⋟ Untuk Mengconvert audio ke voice note\
         \n\n **ᴄᴍᴅ :** `{cmd}convert audio` <efek>\
-        \n └❒ Untuk Menambahkan efek suara jadi berskin\
+        \n └⋟ Untuk Menambahkan efek suara jadi berskin\
         \n ➟ **List Efek :** `bengek`, `jedug`, `echo`, `robot`\
     "
     }
