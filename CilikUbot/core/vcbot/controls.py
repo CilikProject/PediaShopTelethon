@@ -1,9 +1,7 @@
 # Man - UserBot
 # Copyright (c) 2022 Man-Userbot
 # Credits: @mrismanaziz || https://github.com/mrismanaziz
-#
-# This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
-# t.me/SharingUserbot & t.me/Lunatic0de
+# cilik - ubot v2
 
 
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
@@ -14,8 +12,8 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 
-from userbot import LOGS, call_py
-from userbot.core.vcbot.queues import QUEUE, clear_queue, get_queue, pop_an_item
+from CilikUbot import LOGS, call_py
+from CilikUbot.core.vcbot.queues import QUEUE, clear_queue, get_queue, pop_an_item
 
 
 async def skip_item(chat_id: int, x: int):
