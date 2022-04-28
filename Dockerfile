@@ -8,4 +8,4 @@ COPY ./sample_config.env ./config.env* /home/cilik-ubot/
 
 WORKDIR /home/cilik-ubot/
 
-CMD ["python3", "-m", "userbot"]
+CMD ["python3", "-m", "CilikUbot"]
