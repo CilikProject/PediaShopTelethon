@@ -29,6 +29,7 @@ from pySmartDL import SmartDL
 from git import Repo
 from pytgcalls import PyTgCalls
 from requests import get
+from telethon import version
 from telethon import Button
 from telethon.errors import UserIsBlockedError
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
