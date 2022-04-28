@@ -17,10 +17,10 @@
 #    Recode by Fariz <Github.com/farizjs>
 #    From Flicks-Userbot
 #    <t.me/TheFlicksUserbot>
+#    cilik - ubot v2
 
-
-from userbot import BOT_USERNAME, CMD_HELP, bot
-from userbot.utils import edit_or_reply, edit_delete, cilik_cmd
+from CilikUbot import BOT_USERNAME, CMD_HELP, bot
+from CilikUbot.utils import edit_or_reply, edit_delete, cilik_cmd
 
 user = bot.get_me()
 DEFAULTUSER = user.first_name
