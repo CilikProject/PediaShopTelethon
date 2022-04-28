@@ -3,14 +3,15 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 # thanks to anishsk
+# cilik - ubot v2
 
 from telethon.tl.functions.messages import EditChatDefaultBannedRightsRequest
 from telethon.tl.types import ChatBannedRights
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS, owner
-from userbot.events import register
-from userbot.utils import edit_or_reply, cilik_cmd
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, DEVS, owner
+from CilikUbot.events import register
+from CilikUbot.utils import edit_or_reply, cilik_cmd
 
 
 @cilik_cmd(pattern="lock ?(.*)")
@@ -201,9 +202,9 @@ CMD_HELP.update(
     {
         "Locks": f"**Plugin : **`Locks`\
         \n\n **ᴄᴍᴅ :** `{cmd}lock` <all atau Jenis lock>\
-        \n └❒ **Function : **Memungkinkan anda Mengunci beberapa jenis pesan dalam obrolan.\
+        \n └⋟ **Function : **Memungkinkan anda Mengunci beberapa jenis pesan dalam obrolan.\
         \n\n **ᴄᴍᴅ :** `{cmd}unlock` <all atau Jenis lock>\
-        \n └❒ **Function : **Untuk membuka kunci, beberapa jenis pesan dalam obrolan.\
+        \n └⋟ **Function : **Untuk membuka kunci, beberapa jenis pesan dalam obrolan.\
         \n\n • **Jenis pesan yang bisa dikunci atau dibuka adalah:**\
         \n • `all, msg, media, sticker, gif, game, inline, poll, invite, pin, info`\
         \n\n • **Contoh :** `.lock msg` atau `.unlock msg`\
