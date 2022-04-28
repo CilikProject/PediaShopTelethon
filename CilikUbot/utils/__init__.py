@@ -48,5 +48,4 @@ from .utils import (
     remove_plugin,
     start_assistant,
     autopilot,
-    git,
 )
