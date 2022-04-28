@@ -3,10 +3,10 @@ from random import choice
 
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import cilik_cmd
-from userbot.utils.misc import create_quotly
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP
+from CilikUbot.utils import cilik_cmd
+from CilikUbot.utils.misc import create_quotly
 
 
 @cilik_cmd(pattern="q( (.*)|$)")
@@ -74,13 +74,13 @@ CMD_HELP.update(
     {
         "Quotly": f"**➢ Plugin : **Quotly\
         \n\n **ᴄᴍᴅ :** `{cmd}q`\
-        \n └❒ Membuat pesan menjadi sticker dengan random background.\
+        \n └⋟ Membuat pesan menjadi sticker dengan random background.\
         \n\n **ᴄᴍᴅ :** `{cmd}q <angka>`\
-        \n └❒ Membuat pesan menjadi sticker dengan custom jumlah pesan yang diberikan.\
+        \n └⋟ Membuat pesan menjadi sticker dengan custom jumlah pesan yang diberikan.\
         \n\n **ᴄᴍᴅ :** `{cmd}q <warna>`\
-        \n └❒ Membuat pesan menjadi sticker dengan custom warna background yang diberikan.\
+        \n └⋟ Membuat pesan menjadi sticker dengan custom warna background yang diberikan.\
         \n\n **ᴄᴍᴅ :** `{cmd}q <username>`\
-        \n └❒ Membuat pesan menjadi sticker dengan custom username user tele yang diberikan.\
+        \n └⋟ Membuat pesan menjadi sticker dengan custom username user tele yang diberikan.\
     "
     }
 )
