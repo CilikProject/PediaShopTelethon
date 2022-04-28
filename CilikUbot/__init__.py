@@ -525,7 +525,9 @@ try:
     chat_id, msg_id = gvarstatus("restartstatus").split("\n")
     with bot:
         try:
-            LOOP.run_until_complete(update_restart_msg(int(chat_id), int(msg_id)))
+            bot.loop.run_until_complete(
+                update_restart_msg(
+                    int(chat_id), int(msg_id)))
         except BaseException:
             pass
     delgvar("restartstatus")
