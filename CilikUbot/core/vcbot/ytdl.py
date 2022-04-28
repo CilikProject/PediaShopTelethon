@@ -1,14 +1,12 @@
 # Man - UserBot
 # Copyright (c) 2022 Man-Userbot
 # Credits: @mrismanaziz || https://github.com/mrismanaziz
-#
-# This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
-# t.me/SharingUserbot & t.me/Lunatic0de
+# cilik - ubot v2
 
 from youtubesearchpython import VideosSearch
 
-from userbot import LOGS
-from userbot.utils import bash
+from CilikUbot import LOGS
+from CilikUbot.utils import bash
 
 
 def ytsearch(query: str):
