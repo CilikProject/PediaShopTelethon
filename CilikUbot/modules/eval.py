@@ -2,7 +2,7 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#
+# cilik - ubot v2
 """Userbot module for executing code and terminal commands from Telegram."""
 
 import asyncio
@@ -12,9 +12,9 @@ import traceback
 from os import remove
 from pprint import pprint
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot
-from userbot.utils import cilik_cmd, edit_or_reply
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, bot
+from CilikUbot.utils import cilik_cmd, edit_or_reply
 
 p, pp = print, pprint
 
@@ -23,12 +23,12 @@ p, pp = print, pprint
 async def _(event):
     expression = event.pattern_match.group(1)
     if not expression:
-        return await edit_or_reply(event, "**Berikan Code untuk di eksekusi.**")
-    if expression in ("userbot.session", "config.env"):
+        return await edit_or_reply(event, "`What should i eval...`")
+    if expression in ("CilikUbot.session", "config.env"):
         return await edit_or_reply(event, "**Itu operasi yang berbahaya! Tidak diperbolehkan!**")
     cmd = "".join(event.message.message.split(maxsplit=1)[1:])
     if not cmd:
-        return edit_or_reply(event, "**Apa yang harus saya jalankan?**")
+        return edit_or_reply(event, "`Apa yang harus saya jalankan?`")
     cmd = (
         cmd.replace("sendmessage", "send_message")
         .replace("sendfile", "send_file")
@@ -72,7 +72,7 @@ async def _(event):
         evaluation = stdout
     else:
         evaluation = "Success"
-    final_output = f"**•  Eval : **\n`{cmd}` \n\n**•  Result : **\n`{evaluation}` \n"
+    final_output = f"**• </> : **\n`{cmd}` \n\n**•  Result : **\n`{evaluation}` \n"
 
     if len(final_output) > 4096:
         cilik = final_output.replace("`", "").replace("**", "").replace("__", "")
@@ -82,7 +82,7 @@ async def _(event):
                 event.chat_id,
                 out_file,
                 force_document=True,
-                thumb="userbot/resources/logo.jpg",
+                thumb="CilikUbot/resources/logo.jpg",
                 allow_cache=False,
                 caption=f"`{cmd}`" if len(cmd) < 998 else None,
                 reply_to=reply_to_id,
@@ -97,7 +97,7 @@ async def run(event):
     code = event.pattern_match.group(1)
     if not code:
         return await edit_or_reply(event, "**Read** `.help exec` **for an example.**")
-    if code in ("userbot.session", "config.env"):
+    if code in ("CilikUbot.session", "config.env"):
         return await edit_or_reply(event, "`Itu operasi yang berbahaya! Tidak diperbolehkan!`")
     await event.edit("`Processing...`")
     if len(code.splitlines()) <= 5:
@@ -129,7 +129,7 @@ async def run(event):
             event.chat_id,
             "output.txt",
             reply_to=event.id,
-            thumb="userbot/resources/logo.jpg",
+            thumb="CilikUbot/resources/logo.jpg",
             caption="**Output terlalu besar, dikirim sebagai file**",
         )
         return remove("output.txt")
@@ -141,7 +141,7 @@ async def terminal_runner(event):
     command = event.pattern_match.group(1)
     if not command:
         return await edit_or_reply(event, "`Give a command or use .help term for an example.`")
-    if command in ("userbot.session", "config.env"):
+    if command in ("CilikUbot.session", "config.env"):
         return await edit_or_reply(event, "`Itu operasi yang berbahaya! Tidak diperbolehkan!`")
     await event.edit("`Processing...`")
     process = await asyncio.create_subprocess_shell(
@@ -161,7 +161,7 @@ async def terminal_runner(event):
             event.chat_id,
             "output.txt",
             reply_to=event.id,
-            thumb="userbot/resources/logo.jpg",
+            thumb="CilikUbot/resources/logo.jpg",
             caption="**Output terlalu besar, dikirim sebagai file**",
         )
         return remove("output.txt")
@@ -202,13 +202,13 @@ CMD_HELP.update(
     {
         "Eval": f"**➢ Plugin : ** `Eval`\
         \n\n **ᴄᴍᴅ :** `{cmd}eval` <cmd>\
-        \n └❒ Evaluasi ekspresi Python dalam argumen skrip yang sedang berjalan\
+        \n └⋟ Evaluasi ekspresi Python dalam argumen skrip yang sedang berjalan\
         \n\n **ᴄᴍᴅ :** `{cmd}json` <reply ke pesan>\
-        \n └❒ **Untuk mendapatkan detail pesan dalam format json\
+        \n └⋟ **Untuk mendapatkan detail pesan dalam format json\
         \n\n **ᴄᴍᴅ :** `{cmd}term` <cmd>\
-        \n └❒ Jalankan perintah dan skrip bash di server Anda\
+        \n └⋟ Jalankan perintah dan skrip bash di server Anda\
         \n\n **ᴄᴍᴅ :** `{cmd}exec` print('hello')\
-        \n └❒ Jalankan skrip python kecil di subproses\
+        \n └⋟ Jalankan skrip python kecil di subproses\
     "
     }
 )
