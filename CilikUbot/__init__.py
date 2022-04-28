@@ -21,6 +21,7 @@ from math import ceil
 from pathlib import Path
 from sys import version_info
 from base64 import b64decode
+from asyncio import get_event_loop
 
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
@@ -46,6 +47,7 @@ def STORAGE(n):
 
 load_dotenv("config.env")
 
+LOOP = get_event_loop()
 StartTime = time.time()
 repo = Repo()
 branch = repo.active_branch.name
