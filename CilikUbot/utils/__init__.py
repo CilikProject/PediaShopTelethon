@@ -17,7 +17,7 @@ from . import format as _format
 from .start import startupmessage, checking
 from .chrome import chrome, options
 from .decorator import asst_cmd, callback, chataction, cilik_cmd, cilik_handler
-from .events import checking, get_user_from_event
+from .events import get_user_from_event
 from .format import parse_pre
 from .google_images_download import googleimagesdownload
 from .progress import CancelProcess, progress
