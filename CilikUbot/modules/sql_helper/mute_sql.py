@@ -1,5 +1,5 @@
 try:
-    from userbot.modules.sql_helper import BASE, SESSION
+    from CilikUbot.modules.sql_helper import BASE, SESSION
 except ImportError:
     raise Exception("Hello!")
 
