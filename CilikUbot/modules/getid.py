@@ -1,9 +1,9 @@
 from telethon.utils import pack_bot_file_id
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, LOGS
-from userbot.utils import edit_delete, cilik_cmd
-from userbot.utils.logger import logging
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, LOGS
+from CilikUbot.utils import edit_delete, cilik_cmd
+from CilikUbot.utils.logger import logging
 
 LOGS = logging.getLogger(__name__)
 
@@ -55,11 +55,11 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "GetId": f"**➢ Plugin : **`GetId`\
+        "Get_Id": f"**➢ Plugin : **`Get_Id`\
         \n\n **ᴄᴍᴅ :** `{cmd}id` <username/reply>\
-        \n └❒ Untuk Mengambil Chat ID obrolan saat ini\
+        \n └⋟ Untuk Mengambil Chat ID obrolan saat ini\
         \n\n **ᴄᴍᴅ :** `{cmd}userid` <username/reply>\
-        \n └❒ Untuk Mengambil ID & Username obrolan saat ini\
+        \n └⋟ Untuk Mengambil ID & Username obrolan saat ini\
     "
     }
 )
