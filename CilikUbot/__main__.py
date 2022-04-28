@@ -42,7 +42,7 @@ except Exception as e:
     sys.exit(1)
 
 for module_name in ALL_MODULES:
-    imported_module = import_module("userbot.modules." + module_name)
+    imported_module = import_module("CilikUbot.modules." + module_name)
 
 if not BOTLOG_CHATID:
     LOGS.info(
