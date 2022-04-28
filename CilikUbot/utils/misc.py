@@ -6,9 +6,8 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/pyUltroid/blob/main/LICENSE/>.
 #
-# Ported by @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# t.me/SharingUserbot & t.me/Lunatic0de
+# cilik - ubot v2
 
 import base64
 import os
@@ -21,8 +20,8 @@ from PIL import Image
 from telethon.tl import types
 from telethon.utils import get_display_name, get_peer_id
 
-from userbot import DEVS, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import runcmd
+from CilikUbot import DEVS, TEMP_DOWNLOAD_DIRECTORY
+from CilikUbot.utils import runcmd
 
 
 async def async_searcher(
@@ -195,7 +194,7 @@ async def create_quotly(
 async def Carbon(
     code,
     base_url="https://carbonara-42.herokuapp.com/api/cook",
-    file_name="Cilik-Userbot",
+    file_name="Cilik-Ubot",
     **kwargs,
 ):
     kwargs["code"] = code
