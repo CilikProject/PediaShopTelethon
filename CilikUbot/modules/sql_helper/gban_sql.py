@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from userbot.modules.sql_helper import BASE, SESSION
+from CilikUbot.modules.sql_helper import BASE, SESSION
 
 
 class GBan(BASE):
