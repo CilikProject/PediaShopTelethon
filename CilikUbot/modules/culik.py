@@ -1,5 +1,6 @@
 # Ported By @VckyouuBitch From Geez - Projects
 # Copyright © Team Geez - Project
+# cilik - ubot v2
 
 from telethon.errors import (
     ChannelInvalidError,
@@ -10,9 +11,9 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
-from userbot import CMD_HELP
-from userbot import CMD_HELP
-from userbot.events import register
+from CilikUbot import CMD_HELP
+from CilikUbot import CMD_HELP
+from CilikUbot.events import register
 
 
 async def get_chatinfo(event):
@@ -96,7 +97,7 @@ CMD_HELP.update(
     {
         "Invite": f"**➢ Plugin : **`Invite`\
         \n\n **ᴄᴍᴅ :**  `.inviteall` <username grup yang mau diculik> \
-        \n └❒ Menculik Member dari Grup Lain ke Grup chat Anda.\
+        \n └⋟ Menculik Member dari Grup Lain ke Grup chat Anda.\
     "
     }
 )
