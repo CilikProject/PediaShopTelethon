@@ -6,10 +6,11 @@
 # Ported by @mrismanaziz
 # FROM Man-Userbot
 # Recode by @greyyvbss
+# cilik - ubot v2
 
 import sys
 
-from userbot import LOAD, LOGS, NO_LOAD
+from CilikUbot import LOAD, LOGS, NO_LOAD
 
 
 def __list_all_modules():
