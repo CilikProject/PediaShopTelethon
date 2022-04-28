@@ -9,9 +9,9 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import CMD_HELP
-from userbot import CMD_HANDLER as cmd
-from userbot import (
+from CilikUbot import CMD_HELP
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import (
     BOTLOG,
     BOTLOG_CHATID,
     HEROKU_API_KEY,
@@ -19,8 +19,8 @@ from userbot import (
     UPSTREAM_REPO_URL,
     UPSTREAM_REPO_BRANCH
 )
-from userbot.events import register
-from userbot.utils import edit_or_reply, edit_delete, cilik_cmd
+from CilikUbot.events import register
+from CilikUbot.utils import edit_or_reply, edit_delete, cilik_cmd
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
@@ -135,7 +135,7 @@ async def update(event, repo, ups_rem, ac_br):
         await x.delete()
 
     # Spin a new instance of bot
-    args = [sys.executable, "-m", "userbot"]
+    args = [sys.executable, "-m", "CilikUbot"]
     execle(sys.executable, *args, environ)
     return
 
@@ -251,9 +251,9 @@ CMD_HELP.update(
     {
         "Updater": f"**➢ Plugin : **`Updater`\
         \n\n **ᴄᴍᴅ :** `{cmd}update`\
-        \n └✪ Untuk Melihat Pembaruan Terbaru ⚡ Cilik-Userbot ⚡.\
+        \n └⋟ Untuk Melihat Pembaruan Terbaru ⚡ Cilik-Userbot ⚡.\
         \n\n **ᴄᴍᴅ :** `{cmd}update deploy`\
-        \n └✪ Untuk MengUpdate Fitur Terbaru Dari ⚡ Cilik-Userbot ⚡.\
+        \n └⋟ Untuk MengUpdate Fitur Terbaru Dari ⚡ Cilik-Userbot ⚡.\
     "
     }
 )
