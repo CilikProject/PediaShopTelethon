@@ -1,10 +1,10 @@
 import os       
 from secrets import choice
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
-from userbot.utils.misc import Carbon
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP
+from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
+from CilikUbot.utils.misc import Carbon
 
 from .vcplugin import vcmention
 
@@ -229,11 +229,11 @@ CMD_HELP.update(
     {
         "Carbon": f"**➢ Plugin : **`Carbon`\
         \n\n **ᴄᴍᴅ :** `{cmd}carbon` <text/reply>\
-        \n └❒ Carbonisasi teks dengan pengaturan default.\
+        \n └⋟ Carbonisasi teks dengan pengaturan default.\
         \n\n **ᴄᴍᴅ :** `{cmd}rcarbon` <text/reply>\
-        \n └❒ Carbonisasi teks, dengan warna background acak.\
+        \n └⋟ Carbonisasi teks, dengan warna background acak.\
         \n\n **ᴄᴍᴅ :** `{cmd}ccarbon` <warna> <text/reply>\
-        \n └❒ Carbonisasi teks, dengan warna background custom.\
+        \n └⋟ Carbonisasi teks, dengan warna background custom.\
     "
     }
 )
