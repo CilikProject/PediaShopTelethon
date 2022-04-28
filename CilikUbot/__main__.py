@@ -18,7 +18,8 @@ from CilikUbot import (
 )
 from CilikUbot.modules import ALL_MODULES
 from CilikUbot.clients import cilik_userbot_on, multicilik
-from CilikUbot.utils import autobot, autopilot, git
+from CilikUbot.utils import autobot, autopilot
+from CilikUbot.core.git import git
 
 try:
     client = multicilik()
