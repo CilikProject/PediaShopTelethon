@@ -351,7 +351,7 @@ async def update_restart_msg(chat_id, msg_id):
 
 
 try:
-    from userbot.modules.sql_helper.globals import delgvar, gvarstatus
+    from CilikUbot.modules.sql_helper.globals import delgvar, gvarstatus
 
     chat_id, msg_id = gvarstatus("restartstatus").split("\n")
     with bot:
@@ -432,9 +432,9 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
-        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from userbot.utils import reply_id
+        from CilikUbot.modules.sql_helper.bot_blacklists import check_is_black_list
+        from CilikUbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from CilikUbot.utils import reply_id
 
         dugmeler = CMD_HELP
         user = bot.get_me()
