@@ -1,6 +1,7 @@
 # Credits: @mrismanaziz
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # credits @kyy-userbot @ice-userbot
+# cilik - ubot v2
 
 import asyncio
 import importlib
@@ -23,7 +24,7 @@ from telethon.tl.types import (
     ChatAdminRights,
 )
 
-from userbot import (
+from CilikUbot import (
     BOT_TOKEN,
     BOTLOG_CHATID,
     CMD_HELP,
@@ -150,7 +151,7 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_file(bf, "userbot/resources/logo.jpg")
+            await bot.send_file(bf, "CilikUbot/resources/logo.jpg")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setabouttext")
             await asyncio.sleep(1)
@@ -184,7 +185,7 @@ async def autobot():
                              manage_call=True,
                          )
             await bot(EditAdminRequest(int(BOTLOG_CHATID), f"@{username}", rights, "ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴄɪʟɪᴋ"))
-            ppk = "userbot/resources/logo.jpg"
+            ppk = "CilikUbot/resources/logo.jpg"
             await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(ppk)))
             heroku_var["BOT_TOKEN"] = token
             heroku_var["BOT_USERNAME"] = f"@{username}"
@@ -205,7 +206,7 @@ async def autobot():
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_file(bf, "userbot/resources/logo.jpg")
+        await bot.send_file(bf, "CilikUbot/resources/logo.jpg")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setabouttext")
         await asyncio.sleep(1)
@@ -239,7 +240,7 @@ async def autobot():
                  manage_call=True,
              )
         await bot(EditAdminRequest(int(BOTLOG_CHATID), f"@{username}", rights, "ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴄɪʟɪᴋ"))
-        ppk = "userbot/resources/logo.jpg"
+        ppk = "CilikUbot/resources/logo.jpg"
         await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(ppk)))
         heroku_var["BOT_TOKEN"] = token
         heroku_var["BOT_USERNAME"] = f"@{username}"
@@ -254,16 +255,16 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"userbot/modules/{shortname}.py")
-        name = f"userbot.modules.{shortname}"
+        path = Path(f"CilikUbot/modules/{shortname}.py")
+        name = f"CilikUbot.modules.{shortname}"
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info(f"Successfully imported {shortname}")
     else:
 
-        path = Path(f"userbot/modules/{shortname}.py")
-        name = f"userbot.modules.{shortname}"
+        path = Path(f"CilikUbot/modules/{shortname}.py")
+        name = f"CilikUbot.modules.{shortname}"
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -272,7 +273,7 @@ def load_module(shortname):
         mod.logger = logging.getLogger(shortname)
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules[f"userbot.modules.{shortname}"] = mod
+        sys.modules[f"CilikUbot.modules.{shortname}"] = mod
         LOGS.info(f"Successfully imported {shortname}")
 
 
@@ -280,21 +281,21 @@ def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"userbot/modules/assistant/{shortname}.py")
-        name = f"userbot.modules.assistant.{shortname}"
+        path = Path(f"CilikUbot/modules/assistant/{shortname}.py")
+        name = f"CilikUbot.modules.assistant.{shortname}"
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info("Starting Your Assistant Bot.")
         LOGS.info(f"Assistant Sucessfully imported {shortname}")
     else:
-        path = Path(f"userbot/modules/assistant/{shortname}.py")
-        name = f"userbot.modules.assistant.{shortname}"
+        path = Path(f"CilikUbot/modules/assistant/{shortname}.py")
+        name = f"CilikUbot.modules.assistant.{shortname}"
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules[f"userbot.modules.assistant{shortname}"] = mod
+        sys.modules[f"CilikUbot.modules.assistant{shortname}"] = mod
         LOGS.info(f"Assistant Successfully imported{shortname}")
 
 
@@ -306,7 +307,7 @@ def remove_plugin(shortname):
             del CMD_HELP[shortname]
 
         except BaseException:
-            name = f"userbot.modules.{shortname}"
+            name = f"CilikUbot.modules.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 cb = bot._event_builders[i]
