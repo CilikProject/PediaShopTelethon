@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Numeric
 
-from userbot.modules.sql_helper import BASE, SESSION
+from CilikUbot.modules.sql_helper import BASE, SESSION
 
 
 class NOLogPMs(BASE):
