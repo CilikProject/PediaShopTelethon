@@ -1,7 +1,7 @@
 import pybase64
 from telethon import Button
 from telethon.tl.functions.channels import JoinChannelRequest as grey
-from userbot import BOTLOG, BOTLOG_CHATID, LOGS, tgbot
+from CilikUbot import BOTLOG, BOTLOG_CHATID, LOGS, tgbot
 
 
 async def startupmessage():
