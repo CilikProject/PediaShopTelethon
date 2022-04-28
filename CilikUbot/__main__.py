@@ -31,7 +31,7 @@ except Exception as e:
     sys.exit(1)
 
 for module_name in ALL_MODULES:
-    imported_module = import_module("userbot.modules." + module_name)
+    imported_module = import_module("CilikUbot.modules." + module_name)
 
 bot.loop.run_until_complete(cilik_userbot_on())
 if not BOTLOG_CHATID:
