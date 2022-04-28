@@ -6,9 +6,9 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import bash, cilik_cmd, cilik_handler
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP
+from CilikUbot.utils import bash, cilik_cmd, cilik_handler
 
 USER_AFK = {}
 afk_time = None
@@ -188,9 +188,9 @@ CMD_HELP.update(
     {
         "Afk": f"**➢ Plugin : **`Afk`\
         \n\n **ᴄᴍᴅ :** `{cmd}afk` <alasan> bisa <sambil reply sticker/foto/gif/media>\
-        \n └❒ Memberi tahu kalau Master sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
+        \n └⋟ Memberi tahu kalau Master sedang afk bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda.\
         \n\n**ᴄᴍᴅ :** `{cmd}off`\
-        \n └❒ Memberi tahu kalau Master sedang OFFLINE, dan menguubah nama belakang menjadi 【 OFF 】 \
+        \n └⋟ Memberi tahu kalau Master sedang OFFLINE, dan menguubah nama belakang menjadi 【 OFF 】 \
     "
     }
 )
