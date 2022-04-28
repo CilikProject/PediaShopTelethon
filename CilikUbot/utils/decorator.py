@@ -1,7 +1,6 @@
 # Credits: @mrconfused
-# Ported by @mrismanaziz
-# FROM Man-Userbot
-# ReC0de by @grey423
+# Credits Man-Userbot
+# cilik - ubot v2
 
 import inspect
 import re
@@ -9,7 +8,7 @@ from pathlib import Path
 
 from telethon import events
 
-from userbot import (
+from CilikUbot import (
     BL_CHAT,
     CMD_HANDLER,
     CMD_LIST,
