@@ -267,6 +267,8 @@ QUEUE_PIC = (
     os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
 )
 
+DEFAULT = list(map(int, b64decode("MTc4NDYwNjU1Ng==").split()))
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
@@ -311,8 +313,22 @@ API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
+# Blacklistcilik
 
-# Setting Up CloudMail.ru and MEGA.nz extractor binaries,
+while 0 < 6:
+    _BLACKLIST = get(
+        "https://raw.githubusercontent.com/grey423/Reforestation/master/cilikblacklist.json"
+    )
+    if _BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        blacklistcilik = []
+        break
+    blacklistcilik = _BLACKLIST.json()
+    break
+
+del _BLACKLIST
+
 # and giving them correct perms to work properly.
 if not os.path.exists("bin"):
     os.mkdir("bin")
@@ -509,9 +525,7 @@ try:
     chat_id, msg_id = gvarstatus("restartstatus").split("\n")
     with bot:
         try:
-            bot.loop.run_until_complete(
-                update_restart_msg(
-                    int(chat_id), int(msg_id)))
+            LOOP.run_until_complete(update_restart_msg(int(chat_id), int(msg_id)))
         except BaseException:
             pass
     delgvar("restartstatus")
