@@ -1,7 +1,7 @@
 import pybase64
 from telethon.tl.functions.channels import JoinChannelRequest as Grey
 from telethon.tl.types import MessageEntityMentionName
-from userbot import bot
+from CilikUbot import bot
 
 
 from .logger import logging
