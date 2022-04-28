@@ -1,16 +1,16 @@
 # Copyright (C) 2021 Catuserbot <https://github.com/sandy1709/catuserbot>
 # Ported by @mrismanaziz
-# FROM Man-Userbot 
-# Recode by @greyyvbss
+# 
+# cilik - ubot v2
 
 import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import (
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP
+from CilikUbot.utils import (
     _format,
     edit_delete,
     get_user_from_event,
@@ -78,9 +78,9 @@ CMD_HELP.update(
     {
         "SangMata": f"**➢ Plugin : **`SangMata`\
         \n\n **ᴄᴍᴅ :** `{cmd}sg` <reply chat>\
-        \n └❒ Mendapatkan Riwayat Nama Pengguna selama di telegram.\
+        \n └⋟ Mendapatkan Riwayat Nama Pengguna selama di telegram.\
         \n\n **ᴄᴍᴅ :** `{cmd}sgu` <reply chat>\
-        \n └❒ Mendapatkan Riwayat Username Pengguna selama di telegram.\
+        \n └⋟ Mendapatkan Riwayat Username Pengguna selama di telegram.\
     "
     }
 )
