@@ -21,8 +21,8 @@ from telethon.tl.types import (
 )
 from yt_dlp import YoutubeDL
 
-from userbot import LOGS, SUDO_USERS, bot
-from userbot.utils.format import md_to_text, paste_message
+from CilikUbot import LOGS, SUDO_USERS, bot
+from CilikUbot.utils.format import md_to_text, paste_message
 
 
 def deEmojify(inputString):
