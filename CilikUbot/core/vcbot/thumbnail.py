@@ -1,9 +1,7 @@
 # Man - UserBot
 # Copyright (c) 2022 Man-Userbot
 # Credits: @mrismanaziz || https://github.com/mrismanaziz
-#
-# This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
-# t.me/SharingUserbot & t.me/Lunatic0de
+# cilik - ubot v2
 
 import os
 from secrets import choice
@@ -29,22 +27,22 @@ async def gen_thumb(thumbnail, title, videoid, ctitle):
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
                 f = await aiofiles.open(
-                    f"userbot/resources/thumb{videoid}.png", mode="wb"
+                    f"CilikUbot/resources/thumb{videoid}.png", mode="wb"
                 )
                 await f.write(await resp.read())
                 await f.close()
     theme = choice(themes)
-    image1 = Image.open(f"userbot/resources/thumb{videoid}.png")
-    image2 = Image.open(f"userbot/resources/{theme}.png")
+    image1 = Image.open(f"CilikUbot/resources/thumb{videoid}.png")
+    image2 = Image.open(f"CilikUbot/resources/{theme}.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5, image6).save(f"userbot/resources/temp{videoid}.png")
-    img = Image.open(f"userbot/resources/temp{videoid}.png")
+    Image.alpha_composite(image5, image6).save(f"CilikUbot/resources/temp{videoid}.png")
+    img = Image.open(f"CilikUbot/resources/temp{videoid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("userbot/resources/Roboto-Light.ttf", 52)
-    font2 = ImageFont.truetype("userbot/resources/Roboto-Medium.ttf", 76)
+    font = ImageFont.truetype("CilikUbot/resources/Roboto-Light.ttf", 52)
+    font2 = ImageFont.truetype("CilikUbot/resources/Roboto-Medium.ttf", 76)
     draw.text((27, 538), f"Playing on {ctitle[:15]}...", (0, 0, 0), font=font)
     draw.text((27, 612), f"{title[:20]}...", (0, 0, 0), font=font2)
     img.save(f"userbot/resources/final{videoid}.png")
