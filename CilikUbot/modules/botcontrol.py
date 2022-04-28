@@ -3,6 +3,7 @@
 # Copyright (C) 2022 Man-Userbot
 # ReCode by @greyyvbsss
 # From Man-Userbot
+# cilik - ubot v2
 
 import io
 import re
@@ -13,7 +14,7 @@ import heroku3
 from telethon import Button, custom, events
 from telethon.utils import get_display_name, pack_bot_file_id
 
-from userbot import (
+from CilikUbot import (
     BOT_USERNAME,
     BOTLOG,
     BOTLOG_CHATID,
@@ -27,14 +28,14 @@ from userbot import (
     tgbot,
     user,
 )
-from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-from userbot.modules.sql_helper.bot_starters import (
+from CilikUbot.modules.sql_helper.bot_blacklists import check_is_black_list
+from CilikUbot.modules.sql_helper.bot_starters import (
     add_starter_to_db,
     get_all_starters,
     get_starter_details,
 )
-from userbot.modules.sql_helper.globals import gvarstatus
-from userbot.utils import _format, asst_cmd, callback, reply_id
+from CilikUbot.modules.sql_helper.globals import gvarstatus
+from CilikUbot.utils import _format, asst_cmd, callback, reply_id
 
 from .ping import get_readable_time
 
