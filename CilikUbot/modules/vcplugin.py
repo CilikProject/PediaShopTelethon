@@ -1,10 +1,5 @@
-# Man - UserBot
-# Copyright (c) 2022 Man-Userbot
-# Credits: @mrismanaziz || https://github.com/mrismanaziz
-# Thanks To @tofik_dn || https://github.com/tofikdn
-#
-# This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
-# t.me/SharingUserbot & t.me/Lunatic0de
+# Creidts Man - UserBot
+# cilik - ubot v2
 
 from pytgcalls import StreamType
 from pytgcalls.exceptions import AlreadyJoinedError
@@ -19,9 +14,9 @@ from pytgcalls.types.input_stream.quality import (
 from telethon.tl import types
 from telethon.utils import get_display_name
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, PLAY_PIC, QUEUE_PIC, call_py
-from userbot.core.vcbot import (
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, PLAY_PIC, QUEUE_PIC, call_py
+from CilikUbot.core.vcbot import (
     CHAT_TITLE,
     gen_thumb,
     skip_current_song,
@@ -29,8 +24,8 @@ from userbot.core.vcbot import (
     ytdl,
     ytsearch,
 )
-from userbot.core.vcbot.queues import QUEUE, add_to_queue, clear_queue, get_queue
-from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
+from CilikUbot.core.vcbot.queues import QUEUE, add_to_queue, clear_queue, get_queue
+from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
 def vcmention(user):
@@ -475,21 +470,21 @@ CMD_HELP.update(
     {
         "VcPlugin": f"**➢ Plugin : **`VcPlugin`\
         \n\n **ᴄᴍᴅ :** `{cmd}play` <Judul Lagu/Link YT>\
-        \n └❒ Untuk Memutar Lagu di voice chat group dengan akun kamu\
+        \n └⋟ Untuk Memutar Lagu di voice chat group dengan akun kamu\
         \n\n **ᴄᴍᴅ :** `{cmd}vplay` <Judul Video/Link YT>\
-        \n └❒ Untuk Memutar Video di voice chat group dengan akun kamu\
+        \n └⋟ Untuk Memutar Video di voice chat group dengan akun kamu\
         \n\n **ᴄᴍᴅ :** `{cmd}end`\
-        \n └❒ Untuk Memberhentikan video/lagu yang sedang putar di voice chat group\
+        \n └⋟ Untuk Memberhentikan video/lagu yang sedang putar di voice chat group\
         \n\n **ᴄᴍᴅ :** `{cmd}skip`\
-        \n └❒ Untuk Melewati video/lagu yang sedang di putar\
+        \n └⋟ Untuk Melewati video/lagu yang sedang di putar\
         \n\n **ᴄᴍᴅ :** `{cmd}pause`\
-        \n └❒ Untuk memberhentikan video/lagu yang sedang diputar\
+        \n └⋟ Untuk memberhentikan video/lagu yang sedang diputar\
         \n\n **ᴄᴍᴅ :** `{cmd}resume`\
-        \n └❒ Untuk melanjutkan pemutaran video/lagu yang sedang diputar\
+        \n └⋟ Untuk melanjutkan pemutaran video/lagu yang sedang diputar\
         \n\n **ᴄᴍᴅ :** `{cmd}volume` 1-200\
-        \n └❒ Untuk mengubah volume (Membutuhkan Hak admin)\
+        \n └⋟ Untuk mengubah volume (Membutuhkan Hak admin)\
         \n\n **ᴄᴍᴅ :** `{cmd}playlist`\
-        \n └❒ Untuk menampilkan daftar putar Lagu/Video\
+        \n └⋟ Untuk menampilkan daftar putar Lagu/Video\
     "
     }
 )
