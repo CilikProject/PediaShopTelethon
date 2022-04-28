@@ -1,7 +1,7 @@
 import asyncio
 from os import path
 
-from userbot.utils.exceptions import FFmpegReturnCodeError
+from CilikUbot.utils.exceptions import FFmpegReturnCodeError
 
 
 async def convert(file_path: str) -> str:
