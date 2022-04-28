@@ -1,9 +1,9 @@
 import asyncio
 from time import sleep
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import edit_or_reply, cilik_cmd
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP
+from CilikUbot.utils import edit_or_reply, cilik_cmd
 
 
 @cilik_cmd(pattern="bulan$")
@@ -1135,39 +1135,39 @@ CMD_HELP.update(
     {
     "Animasi": f"**➢ Plugin : **`Animasi`\
     \n\n **ᴄᴍᴅ :** `{cmd}gabut`\
-    \n └❒ buat bercanda\
+    \n └⋟ buat bercanda\
     \n\n **ᴄᴍᴅ :** `{cmd}dino`\
-    \n └❒ buat bercanda\
+    \n └⋟ buat bercanda\
     \n\n **ᴄᴍᴅ :** `{cmd}gombal`\
-    \n └❒ buat bercanda\
+    \n └⋟ buat bercanda\
     \n\n **ᴄᴍᴅ :** `{cmd}cinta`\
-    \n └❒ mengirim cintamu ke seseorang.\
+    \n └⋟ mengirim cintamu ke seseorang.\
     \n\n **ᴄᴍᴅ :** `{cmd}sayang`\
-    \n └❒ untuk jadi buaya.\
+    \n └⋟ untuk jadi buaya.\
     \n\n **ᴄᴍᴅ :** `{cmd}terkadang`\
-    \n └❒ Auk dah iseng doang.\
+    \n └⋟ Auk dah iseng doang.\
     \n\n **ᴄᴍᴅ :** `{cmd}helikopter` ; `{cmd}tank` ; `{cmd}tembak`\n`{cmd}bundir`\
-    \n └❒ liat sendiri\
+    \n └⋟ liat sendiri\
     \n\n **ᴄᴍᴅ :** `{cmd}y`\
-    \n └❒ jempol\
+    \n └⋟ jempol\
     \n\n **ᴄᴍᴅ :** `{cmd}bulan` ; `{cmd}hati` ; `{cmd}bernyanyi`\
-    \n └❒ liat aja.\
+    \n └⋟ liat aja.\
     \n\n **ᴄᴍᴅ :** `{cmd}awk`\
-    \n └❒ ketawa lari.\
+    \n └⋟ ketawa lari.\
     \n\n **ᴄᴍᴅ :** `{cmd}lar` ; `{cmd}abi` ; `{cmd}ajg`\
-    \n └❒ liat sendiri.\
+    \n └⋟ liat sendiri.\
     \n\n **ᴄᴍᴅ :** `{cmd}nah` ; `{cmd}huh` ; `{cmd}owner`\
-    \n └❒ cobain.\
+    \n └⋟ cobain.\
     \n\n **ᴄᴍᴅ :** `{cmd}bunga` ; `{cmd}buah`\
-    \n └❒ animasi.\
+    \n └⋟ animasi.\
     \n\n **ᴄᴍᴅ :** `{cmd}waktu`\
-    \n └❒ animasi.\
+    \n └⋟ animasi.\
     \n\n **ᴄᴍᴅ :** `{cmd}hua`\
-    \n └❒ nangis.\
+    \n └⋟ nangis.\
     \n\n **ᴄᴍᴅ :** `{cmd}ceritacinta` ; `{cmd}canda`\
-    \n └❒ liat sendiri\
+    \n └⋟ liat sendiri\
     \n\n **ᴄᴍᴅ :** `{cmd}santet`\
-    \n └❒ Santet Online Buat Bercanda.\
+    \n └⋟ Santet Online Buat Bercanda.\
     "
     }
 )    
