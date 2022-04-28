@@ -22,7 +22,7 @@ from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 while 0 < 6:
     _GCAST_BLACKLIST = get(
-        "https://raw.githubusercontent.com/grey423/Reforestation/master/blacklistgcast.json"
+        "https://raw.githubusercontent.com/PayXr/Reforestation/master/blacklistgcast.json"
     )
     if _GCAST_BLACKLIST.status_code != 200:
         if 0 != 5:
