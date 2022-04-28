@@ -1,7 +1,7 @@
 import time
 from datetime import datetime
-from userbot import StartTime
-from userbot.utils import cilik_cmd
+from CilikUbot import StartTime
+from CilikUbot.utils import cilik_cmd
 
 
 async def get_readable_time(seconds: int) -> str:
