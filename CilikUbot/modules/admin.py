@@ -227,7 +227,7 @@ async def nothanos(unbon):
 @register(pattern=r"^\.cmute(?: |$)(.*)", sudo=True)
 async def spider(spdr):
     try:
-        from userbot.modules.sql_helper.spam_mute_sql import mute
+        from CilikUbot.modules.sql_helper.spam_mute_sql import mute
     except AttributeError:
         return await edit_or_reply(spdr, NO_SQL)
     chat = await spdr.get_chat()
@@ -244,8 +244,6 @@ async def spider(spdr):
         return await edit_or_reply(cilik, "**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
     if user.id in DEVS:
         return await cilik.edit("**Gagal Mute, dia adalah Pembuat Saya 🤪**")
-    if user.id in WHITELIST:
-        return await cilik.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
     await cilik.edit(
         r"\\**#Muted_User**//"
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
@@ -283,7 +281,7 @@ async def unmoot(unmot):
     if not admin and not creator:
         return await edit_delete(unmot, NO_ADMIN)
     try:
-        from userbot.modules.sql_helper.spam_mute_sql import unmute
+        from CilikUbot.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         return await unmot.edit(NO_SQL)
     cilik = await edit_or_reply(unmot, "`Processing...`")
@@ -304,8 +302,8 @@ async def unmoot(unmot):
 @cilik_handler()
 async def muter(moot):
     try:
-        from userbot.modules.sql_helper.gmute_sql import is_gmuted
-        from userbot.modules.sql_helper.spam_mute_sql import is_muted
+        from CilikUbot.modules.sql_helper.gmute_sql import is_gmuted
+        from CilikUbot.modules.sql_helper.spam_mute_sql import is_muted
     except AttributeError:
         return
     muted = is_muted(moot.chat_id)
@@ -341,7 +339,7 @@ async def ungmoot(un_gmute):
     if not admin and not creator:
         return await edit_delete(un_gmute, NO_ADMIN)
     try:
-        from userbot.modules.sql_helper.gmute_sql import ungmute
+        from CilikUbot.modules.sql_helper.gmute_sql import ungmute
     except AttributeError:
         return await edit_delete(un_gmute, NO_SQL)
     cilik = await edit_or_reply(un_gmute, "`Processing...`")
@@ -365,7 +363,7 @@ async def gspider(gspdr):
     if not admin and not creator:
         return await edit_delete(gspdr, NO_ADMIN)
     try:
-        from userbot.modules.sql_helper.gmute_sql import gmute
+        from CilikUbot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
         return await gspdr.edit(NO_SQL)
     cilik = await edit_or_reply(gspdr, "`Processing...`")
@@ -377,8 +375,6 @@ async def gspider(gspdr):
         return await cilik.edit("**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
     if user.id in DEVS:
         return await cilik.edit("**Gagal Global Mute, Dia Adalah Pembuat Saya 🤪**")
-    if user.id in WHITELIST:
-        return await cilik.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
     await cilik.edit("**Berhasil Membisukan Pengguna!**")
     if gmute(user.id) is False:
         await edit_delete(gspdr, "**ERROR! Pengguna Sudah Dibisukan.**")
@@ -623,13 +619,13 @@ CMD_HELP.update(
     {
         "Pinned": f"**➢ Plugin : **`Pinned`\
         \n\n **ᴄᴍᴅ :** `{cmd}pin` <reply chat>\
-        \n └❒ Untuk menyematkan pesan dalam grup.\
+        \n └⋟ Untuk menyematkan pesan dalam grup.\
         \n\n **ᴄᴍᴅ :** `{cmd}pin loud` <reply chat>\
-        \n └❒ Untuk menyematkan pesan dalam grup (tanpa notifikasi) / menyematkan secara diam diam.\
+        \n └⋟ Untuk menyematkan pesan dalam grup (tanpa notifikasi) / menyematkan secara diam diam.\
         \n\n **ᴄᴍᴅ :** `{cmd}unpin` <reply chat>\
-        \n └❒ Untuk melepaskan pin pesan dalam grup.\
+        \n └⋟ Untuk melepaskan pin pesan dalam grup.\
         \n\n **ᴄᴍᴅ :** `{cmd}unpin all`\
-        \n └❒ Untuk melepaskan semua sematan pesan dalam grup.\
+        \n └⋟ Untuk melepaskan semua sematan pesan dalam grup.\
     "
     }
 )
