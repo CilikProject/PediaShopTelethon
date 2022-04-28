@@ -1,9 +1,11 @@
-
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
+# inline credit @keselekpermen69
+# Recode by @mrismanaziz
+# t.me/SharingUserbot
 # cilik-ubot v2
 """ Userbot initialization. """
 
@@ -12,28 +14,23 @@ import os
 import re
 import sys
 import time
-import pybase64
-import random
-
+from asyncio import get_event_loop
+from base64 import b64decode
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
 from pathlib import Path
 from sys import version_info
-from base64 import b64decode
-from asyncio import get_event_loop
 
 from dotenv import load_dotenv
+from git import Repo
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
-from git import Repo
 from pytgcalls import PyTgCalls
 from requests import get
-from telethon import version
 from telethon import Button
 from telethon.errors import UserIsBlockedError
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
-from telethon.tl.functions.channels import JoinChannelRequest as GetSec
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient, custom, events
 from telethon.tl.types import InputWebDocument
