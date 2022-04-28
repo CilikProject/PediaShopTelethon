@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 # Recode by @mrismanaziz
-# Recode 2 by @greyyvbss
+# cilik - ubot v2
 
 from asyncio import sleep
 
@@ -32,11 +32,11 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import BOTLOG_CHATID
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS
-from userbot.events import register
-from userbot.utils import (
+from CilikUbot import BOTLOG_CHATID
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, DEVS
+from CilikUbot.events import register
+from CilikUbot.utils import (
     _format,
     edit_delete,
     edit_or_reply,
@@ -45,7 +45,7 @@ from userbot.utils import (
     cilik_handler,
     media_type,
 )
-from userbot.utils.logger import logging
+from CilikUbot.utils.logger import logging
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "**Gambar Terlalu Kecil**"
@@ -596,23 +596,23 @@ CMD_HELP.update(
     {
         "Admin": f"**➢ Plugin : **`Admin`\
         \n\n **ᴄᴍᴅ :** `{cmd}promote <username/reply> <nama title (optional)>`\
-        \n └❒ Mempromosikan member sebagai admin.\
+        \n └⋟ Mempromosikan member sebagai admin.\
         \n\n **ᴄᴍᴅ :** `{cmd}demote <username/balas ke pesan>`\
-        \n └❒ Menurunkan admin sebagai member.\
+        \n └⋟ Menurunkan admin sebagai member.\
         \n\n **ᴄᴍᴅ :** `{cmd}ban <username/balas ke pesan> <alasan (optional)>`\
-        \n └❒ Membanned Pengguna dari grup.\
+        \n └⋟ Membanned Pengguna dari grup.\
         \n\n **ᴄᴍᴅ :** `{cmd}unban <username/reply>`\
-        \n └❒ Unbanned pengguna jadi bisa join grup lagi.\
+        \n └⋟ Unbanned pengguna jadi bisa join grup lagi.\
         \n\n **ᴄᴍᴅ :** `{cmd}mute <username/reply> <alasan (optional)>`\
-        \n └❒ Membisukan Seseorang Di Grup, Bisa Ke Admin Juga.\
+        \n └⋟ Membisukan Seseorang Di Grup, Bisa Ke Admin Juga.\
         \n\n **ᴄᴍᴅ :** `{cmd}unmute <username/reply>`\
-        \n └❒ Membuka bisu orang yang dibisukan.\
+        \n └⋟ Membuka bisu orang yang dibisukan.\
         \n\n **ᴄᴍᴅ :** `{cmd}all`\
-        \n └❒ Tag semua member dalam grup.\
+        \n └⋟ Tag semua member dalam grup.\
         \n\n **ᴄᴍᴅ :** `{cmd}admins`\
-        \n └❒ Melihat daftar admin di grup.\
+        \n └⋟ Melihat daftar admin di grup.\
         \n\n **ᴄᴍᴅ :** `{cmd}setgpic <flags> <balas ke gambar>`\
-        \n └❒ Untuk mengubah foto profil grup atau menghapus gambar foto profil grup.\
+        \n └⋟ Untuk mengubah foto profil grup atau menghapus gambar foto profil grup.\
         \n ➠ **Flags :** `-s` = **Untuk mengubah foto grup** atau `-d` = **Untuk menghapus foto grup**\
     "
     }
