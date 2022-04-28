@@ -1,6 +1,6 @@
 # Ported By @VckyouuBitch From Geez - Projects
 # Copyright © Team Geez - Project
-# cilik - ubot v2
+# cilik - ubot v 2
 
 from telethon.errors import (
     ChannelInvalidError,
