@@ -1,19 +1,20 @@
 # 🍀 © @tofik_dn
 # ⚠️ Do not remove credits
+# cilik - ubot v2
 
 import requests
 from googletrans import Translator
 from telethon import events
 from telethon.tl.types import User
 
-from userbot import (
+from CilikUbot import (
     CMD_HANDLER as cmd,
     CMD_HELP,
     LOGS,
     bot,
 )
-from userbot.utils import edit_or_reply, cilik_cmd
-from userbot.modules.sql_helper.tede_chatbot_sql import is_tede, rem_tede, set_tede
+from CilikUbot.utils import edit_or_reply, cilik_cmd
+from CilikUbot.modules.sql_helper.tede_chatbot_sql import is_tede, rem_tede, set_tede
 
 translator = Translator()
 LANGUAGE = "id"
@@ -80,7 +81,7 @@ CMD_HELP.update(
     {
         "ChatBot": f"**➢ Plugin : **`ChatBot`\
       \n\n **ᴄᴍᴅ :** `{cmd}chatbot` <on/off>\
-      \n └❒ Untuk membalas chat dengan chatbot AI.\
+      \n └⋟ Untuk membalas chat dengan chatbot AI.\
       "
     }
 )
