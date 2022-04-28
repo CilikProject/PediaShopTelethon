@@ -4,15 +4,16 @@
 # you may not use this file except in compliance with the License.
 
 # port to userbot from uniborg by @keselekpermen69
+# cilik - ubot v2
 
 
 import io
 import re
 
-import userbot.modules.sql_helper.blacklist_sql as sql
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import edit_or_reply, cilik_cmd, cilik_handler
+import CilikUbot.modules.sql_helper.blacklist_sql as sql
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP
+from CilikUbot.utils import edit_or_reply, cilik_cmd, cilik_handler
 
 
 @cilik_handler(incoming=True)
@@ -95,9 +96,9 @@ CMD_HELP.update(
         \n\n **ᴄᴍᴅ :** `{cmd}listbl`\
         \n └⋟ Melihat daftar blacklist yang aktif di obrolan.\
         \n\n **ᴄᴍᴅ :** `{cmd}addbl` <kata>\
-        \n └⋙ Memasukan pesan ke blacklist 'kata blacklist'.\
+        \n └⋟ Memasukan pesan ke blacklist 'kata blacklist'.\
         \n\n **ᴄᴍᴅ :** `{cmd}rmbl` <kata>\
-        \n └❒ Menghapus kata blacklist.\
+        \n └⋟ Menghapus kata blacklist.\
     "
     }
 )
