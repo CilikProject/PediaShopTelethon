@@ -5,8 +5,7 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# t.me/SharingUserbot & t.me/Lunatic0de
-# recode by @greyyvbss
+# cilik - ubot v2
 
 import asyncio
 import os
@@ -15,10 +14,10 @@ import heroku3
 from requests import get
 from telethon.errors import FloodWaitError
 
-from userbot import BLACKLIST_GCAST
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS, HEROKU_API_KEY, HEROKU_APP_NAME
-from userbot.utils import edit_delete, edit_or_reply, cilik_cmd
+from CilikUbot import BLACKLIST_GCAST
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, DEVS, HEROKU_API_KEY, HEROKU_APP_NAME
+from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
 while 0 < 6:
@@ -179,15 +178,15 @@ CMD_HELP.update(
     {
         "Gcast": f"**➢ Plugin : **`Gcast`\
         \n\n **ᴄᴍᴅ :** `{cmd}gcast` <text/reply media>\
-        \n └❒ Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
+        \n └⋟ Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
         \n\n **ᴄᴍᴅ :** `{cmd}blchat`\
-        \n └❒ Untuk Mengecek informasi daftar blacklist gcast.\
+        \n └⋟ Untuk Mengecek informasi daftar blacklist gcast.\
         \n\n **ᴄᴍᴅ :** `{cmd}addblacklist`\
-        \n └❒ Untuk Menambahkan grup tersebut ke blacklist gcast.\
+        \n └⋟ Untuk Menambahkan grup tersebut ke blacklist gcast.\
         \n\n **ᴄᴍᴅ :** `{cmd}delblacklist`\
-        \n └❒ Untuk Menghapus grup tersebut dari blacklist gcast.\
+        \n └⋟ Untuk Menghapus grup tersebut dari blacklist gcast.\
         \n\n **ᴄᴍᴅ :** `{cmd}gucast` <text/reply media>\
-        \n └❒ Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
+        \n └⋟ Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
         \n ➠ **Note : **Ketik perintah** `{cmd}addblacklist` **dan** `{cmd}delblacklist` **di grup yang kamu Blacklist.\
     "
     }
