@@ -16,7 +16,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from userbot import CMD_HANDLER, DEVS, CMD_LIST, bot
+from CilikUbot import CMD_HANDLER, DEVS, CMD_LIST, bot
 
 
 def cilik_cmd(pattern=None, command=None, **args):
