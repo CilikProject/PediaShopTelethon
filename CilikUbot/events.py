@@ -3,7 +3,6 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-"""Userbot module for managing events. One of the main components of the userbot."""
 
 import inspect
 import re
@@ -16,7 +15,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from CilikUbot import CMD_HANDLER, DEVS, CMD_LIST, bot
+from CilikUbot import CMD_HANDLER, CMD_LIST, DEFAULT, DEVS, CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10, bot
 
 
 def cilik_cmd(pattern=None, command=None, **args):
@@ -48,8 +47,14 @@ def cilik_cmd(pattern=None, command=None, **args):
                 cmd = reg + command
             else:
                 cmd = (
-                    (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
+                    (reg +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
             try:
                 CMD_LIST[file_test].append(cmd)
             except BaseException:
@@ -87,7 +92,13 @@ def command(**args):
         try:
             cmd = re.search(reg, pattern)
             try:
-                cmd = cmd.group(1).replace("$", "").replace("\\", "").replace("^", "")
+                cmd = cmd.group(1).replace(
+                    "$",
+                    "").replace(
+                    "\\",
+                    "").replace(
+                    "^",
+                    "")
             except BaseException:
                 pass
             try:
@@ -126,18 +137,19 @@ def register(**args):
     disable_errors = args.get("disable_errors", False)
     insecure = args.get("insecure", False)
     args.get("sudo", False)
-  
+    args.get("own", False)
+
     if pattern is not None and not pattern.startswith("(?i)"):
         args["pattern"] = "(?i)" + pattern
 
     if "disable_edited" in args:
         del args["disable_edited"]
-    
+
     if "sudo" in args:
         del args["sudo"]
         args["incoming"] = True
         args["from_users"] = DEVS
- 
+
     if "ignore_unsafe" in args:
         del args["ignore_unsafe"]
 
@@ -149,7 +161,12 @@ def register(**args):
 
     if "trigger_on_fwd" in args:
         del args["trigger_on_fwd"]
-  
+
+    if "own" in args:
+        del args["own"]
+        args["incoming"] = True
+        args["from_users"] = DEFAULT
+
     if "insecure" in args:
         del args["insecure"]
 
@@ -188,7 +205,7 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**★ CILIKUSERBOT ERROR REPORT ★**\n\n"
+                    text = "**✘ CILIK-USERBOT ERROR REPORT ✘**\n\n"
                     link = "[Group Support](https://t.me/CilikSupport)"
                     text += "Jika mau, Anda bisa melaporkan error ini, "
                     text += f"Cukup forward saja pesan ini ke {link}.\n\n"
@@ -220,16 +237,55 @@ def register(**args):
                         command, stdout=asyncsub.PIPE, stderr=asyncsub.PIPE
                     )
                     stdout, stderr = await process.communicate()
-                    result = str(stdout.decode().strip()) + str(stderr.decode().strip())
+                    result = str(stdout.decode().strip()) + \
+                        str(stderr.decode().strip())
 
                     ftext += result
 
                     with open("error.log", "w+") as file:
                         file.write(ftext)
 
-        if not disable_edited:
-            bot.add_event_handler(wrapper, events.MessageEdited(**args))
-        bot.add_event_handler(wrapper, events.NewMessage(**args))
+        if bot:
+            if not disable_edited:
+                bot.add_event_handler(wrapper, events.MessageEdited(**args))
+            bot.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK2:
+            if not disable_edited:
+                CILIK2.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK2.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK3:
+            if not disable_edited:
+                CILIK3.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK3.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK4:
+            if not disable_edited:
+                CILIK4.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK4.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK5:
+            if not disable_edited:
+                CILIK5.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK5.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK6:
+            if not disable_edited:
+                CILIK6.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK6.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK7:
+            if not disable_edited:
+                CILIK7.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK7.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK8:
+            if not disable_edited:
+                CILIK8.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK8.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK9:
+            if not disable_edited:
+                CILIK9.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK9.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK10:
+            if not disable_edited:
+                CILIK10.add_event_handler(
+                    wrapper, events.MessageEdited(**args))
+            CILIK10.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
 
     return decorator
