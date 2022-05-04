@@ -98,12 +98,12 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                               )
         else:
             await edit_delete(event,
-                              "`⚡ Cilik-Userbot ⚡ Berhasil DiUpdate✅,Restart Tunggu Sebentar`"
+                              "`⚡Cilik-Ubot⚡ Berhasil DiUpdate✅,Restart Tunggu Sebentar`"
                               )
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#BOT \n" "`⚡ Cilik-Userbot ⚡ Berhasil Di Update`"
+                BOTLOG_CHATID, "#BOT \n" "`⚡Cilik-Ubot⚡ Berhasil Di Update`"
             )
 
     else:
@@ -119,9 +119,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    x = await edit_or_reply(event, "**⚡ Cilik-Userbot ⚡** `Berhasil Di Update!`")
+    x = await edit_or_reply(event, "**⚡Cilik-Ubot⚡** `Berhasil Di Update!`")
     await asyncio.sleep(1)
-    await x.edit("**⚡ Cilik-Userbot ⚡** `Di Restart....`")
+    await x.edit("**⚡Cilik-Ubot⚡** `Di Restart....`")
     await asyncio.sleep(1)
     await x.edit("`Mohon Menunggu Beberapa Detik.`")
     await asyncio.sleep(10)
@@ -129,7 +129,7 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#BOT \n" "**⚡ Cilik-Userbot ⚡ Telah Di Perbarui.**"
+            BOTLOG_CHATID, "#BOT \n" "**⚡Cilik-Ubot⚡ Telah Di Perbarui.**"
         )
         await asyncio.sleep(100)
         await x.delete()
@@ -195,7 +195,7 @@ async def upstream(event):
 
     if changelog == "" and force_update is False:
         await xx.edit(
-            f"\n⚡ Cilik-Userbot ⚡ Sudah Versi Terbaru || Tunggu Update Terbaru\n"
+            f"\n**⚡Cilik-Ubot⚡ Sudah Versi Terbaru || Tunggu Update Terbaru**\n"
         )
         await asyncio.sleep(15)
         await xx.delete()
@@ -203,7 +203,7 @@ async def upstream(event):
 
     if conf is None and force_update is False:
         changelog_str = (
-            f"**Pembaruan Untuk ⚡ Cilik-Userbot ⚡ :\n\n👨‍💻 Pembaruan Data :**\n`{changelog}`"
+            f"**Pembaruan Untuk ⚡Cilik-Ubot⚡ :\n\n👨‍💻 Pembaruan Data :**\n`{changelog}`"
         )
         if len(changelog_str) > 4096:
             await xx.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
@@ -227,13 +227,13 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await xx.edit("` Proses Update ⚡ Cilik-Userbot ⚡, Loading....1%`")
-        await xx.edit("` Proses Update ⚡ Cilik-Userbot ⚡ Loading....20%`")
-        await xx.edit("` Proses Update ⚡ Cilik-Userbot ⚡, Loading....45%`")
-        await xx.edit("` Proses Update ⚡ Cilik-Userbot ⚡, Loading....75%`")
-        await xx.edit("` Proses Update ⚡ Cilik-Userbot ⚡, Updating...90%`")
+        await xx.edit("` Proses Update ⚡Cilik-Ubot⚡, Loading....1%`")
+        await xx.edit("` Proses Update ⚡Cilik-Ubot⚡ Loading....20%`")
+        await xx.edit("` Proses Update ⚡Cilik-Ubot⚡, Loading....45%`")
+        await xx.edit("` Proses Update ⚡Cilik-Ubot⚡, Loading....75%`")
+        await xx.edit("` Proses Update ⚡Cilik-Ubot⚡, Updating...90%`")
         await xx.edit(
-            "` Proses Update ⚡ Cilik-Userbot ⚡, Mohon Tunggu Sebentar....100%`"
+            "` Proses Update ⚡Cilik-Ubot⚡, Mohon Tunggu Sebentar....100%`"
         )
 
     if conf == "now":
@@ -251,9 +251,9 @@ CMD_HELP.update(
     {
         "Updater": f"**➢ Plugin : **`Updater`\
         \n\n **ᴄᴍᴅ :** `{cmd}update`\
-        \n └⋟ Untuk Melihat Pembaruan Terbaru ⚡ Cilik-Userbot ⚡.\
+        \n └⋟ Untuk Melihat Pembaruan Terbaru ⚡Cilik-Ubot⚡.\
         \n\n **ᴄᴍᴅ :** `{cmd}update deploy`\
-        \n └⋟ Untuk MengUpdate Fitur Terbaru Dari ⚡ Cilik-Userbot ⚡.\
+        \n └⋟ Untuk MengUpdate Fitur Terbaru Dari ⚡Cilik-Ubot⚡.\
     "
     }
 )
