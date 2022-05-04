@@ -37,7 +37,7 @@ async def cmd_list(event):
             await edit_delete(event, f"**Module** `{args}` **Tidak tersedia!**")
     else:
         try:
-            results = await bot.inline_query(  # pylint:disable=E0602
+            results = await event.client.inline_query(  # pylint:disable=E0602
                 BOT_USERNAME, "@CilikUserbot"
             )
             await results[0].click(
