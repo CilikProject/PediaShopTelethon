@@ -45,8 +45,8 @@ async def gen_thumb(thumbnail, title, videoid, ctitle):
     font2 = ImageFont.truetype("CilikUbot/resources/Roboto-Medium.ttf", 76)
     draw.text((27, 538), f"Playing on {ctitle[:15]}...", (0, 0, 0), font=font)
     draw.text((27, 612), f"{title[:20]}...", (0, 0, 0), font=font2)
-    img.save(f"userbot/resources/final{videoid}.png")
-    os.remove(f"userbot/resources/temp{videoid}.png")
-    os.remove(f"userbot/resources/thumb{videoid}.png")
-    final = f"userbot/resources/final{videoid}.png"
+    img.save(f"CilikUbot/resources/final{videoid}.png")
+    os.remove(f"CilikUbot/resources/temp{videoid}.png")
+    os.remove(f"CilikUbot/resources/thumb{videoid}.png")
+    final = f"CilikUbot/resources/final{videoid}.png"
     return final
