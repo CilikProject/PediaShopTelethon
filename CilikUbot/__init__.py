@@ -129,7 +129,7 @@ STRING_10 = os.environ.get("STRING_10", None)
 
 
 # Logging channel/group ID configuration.
-BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or 0)
+BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID", "-1001770235849")
 
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
