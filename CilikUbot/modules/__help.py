@@ -22,7 +22,7 @@
 from CilikUbot import BOT_USERNAME, CMD_HELP, bot
 from CilikUbot.utils import edit_or_reply, edit_delete, cilik_cmd
 
-user = bot.get_me()
+user = tgbot.get_me()
 DEFAULTUSER = user.first_name
 CUSTOM_HELP_EMOJI = "✘"
 
@@ -37,7 +37,7 @@ async def cmd_list(event):
             await edit_delete(event, f"**Module** `{args}` **Tidak tersedia!**")
     else:
         try:
-            results = await event.client.inline_query(  # pylint:disable=E0602
+            results = await tgbot.inline_query(  # pylint:disable=E0602
                 BOT_USERNAME, "@CilikUserbot"
             )
             await results[0].click(
