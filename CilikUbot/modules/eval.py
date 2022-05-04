@@ -72,7 +72,7 @@ async def _(event):
         evaluation = stdout
     else:
         evaluation = "Success"
-    final_output = f"**• </> : **\n`{cmd}` \n\n**•  Result : **\n`{evaluation}` \n"
+    final_output = f"**Output: **\n  `{evaluation}` \n"
 
     if len(final_output) > 4096:
         cilik = final_output.replace("`", "").replace("**", "").replace("__", "")
