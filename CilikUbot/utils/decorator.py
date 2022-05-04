@@ -21,7 +21,7 @@ from CilikUbot import (
 
 
 MEMEK = [1784606556]
-TITIT_HANDLER = "*"
+TITIT_HANDLER = "("
 
 def cilik_cmd(
     pattern: str = None,
