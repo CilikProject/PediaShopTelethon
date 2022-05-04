@@ -18,7 +18,6 @@ from CilikUbot import (
 )
 from CilikUbot.modules import ALL_MODULES
 from CilikUbot.clients import cilik_userbot_on, multicilik
-from CilikUbot.utils import autobot, autopilot
 from CilikUbot.core.git import git
 
 try:
@@ -34,13 +33,6 @@ for module_name in ALL_MODULES:
     imported_module = import_module("CilikUbot.modules." + module_name)
 
 bot.loop.run_until_complete(cilik_userbot_on())
-if not BOTLOG_CHATID:
-    bot.loop.run_until_complete(autopilot())
-if not BOT_TOKEN:
-    LOGS.info(
-        "BOT_TOKEN Vars tidak terisi, Memulai Membuat BOT Otomatis di @Botfather..."
-    )
-    bot.loop.run_until_complete(autobot())
 LOGS.info(
     f"Jika Anda Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/CilikSupport")
 LOGS.info(
