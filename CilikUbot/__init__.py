@@ -606,7 +606,7 @@ with bot:
         from CilikUbot.utils import reply_id
 
         dugmeler = CMD_HELP
-        user = tgbot.get_me()
+        user = bot.get_me()
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
