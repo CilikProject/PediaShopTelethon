@@ -14,8 +14,7 @@ from pytgcalls.types.input_stream.quality import (
 from telethon.tl import types
 from telethon.utils import get_display_name
 
-from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import CMD_HELP, PLAY_PIC, QUEUE_PIC, call_py
+from CilikUbot import PLAY_PIC, QUEUE_PIC, call_py
 from CilikUbot.core.vcbot import (
     CHAT_TITLE,
     gen_thumb,
