@@ -19,15 +19,15 @@
 #    <t.me/TheFlicksUserbot>
 #    cilik - ubot v2
 
-from CilikUbot import BOT_USERNAME, CMD_HELP, tgbot
+from CilikUbot import BOT_USERNAME, CMD_HELP, bot
 from CilikUbot.utils import edit_or_reply, edit_delete, cilik_cmd
 
-user = tgbot.get_me()
+user = bot.get_me()
 DEFAULTUSER = user.first_name
 CUSTOM_HELP_EMOJI = "✘"
 
 
-@cilik_cmd(pattern="help ?(.*)")
+@cilik_cmd(pattern="helpme ?(.*)")
 async def cmd_list(event):
     args = event.pattern_match.group(1)
     if args:
@@ -37,7 +37,7 @@ async def cmd_list(event):
             await edit_delete(event, f"**Module** `{args}` **Tidak tersedia!**")
     else:
         try:
-            results = await tgbot.inline_query(  # pylint:disable=E0602
+            results = await bot.inline_query(  # pylint:disable=E0602
                 BOT_USERNAME, "@CilikUserbot"
             )
             await results[0].click(
