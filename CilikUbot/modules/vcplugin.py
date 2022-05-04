@@ -465,26 +465,3 @@ async def kickedvc(_, chat_id: int):
     if chat_id in QUEUE:
         clear_queue(chat_id)
 
-
-CMD_HELP.update(
-    {
-        "VcPlugin": f"**➢ Plugin : **`VcPlugin`\
-        \n\n **ᴄᴍᴅ :** `{cmd}play` <Judul Lagu/Link YT>\
-        \n └⋟ Untuk Memutar Lagu di voice chat group dengan akun kamu\
-        \n\n **ᴄᴍᴅ :** `{cmd}vplay` <Judul Video/Link YT>\
-        \n └⋟ Untuk Memutar Video di voice chat group dengan akun kamu\
-        \n\n **ᴄᴍᴅ :** `{cmd}end`\
-        \n └⋟ Untuk Memberhentikan video/lagu yang sedang putar di voice chat group\
-        \n\n **ᴄᴍᴅ :** `{cmd}skip`\
-        \n └⋟ Untuk Melewati video/lagu yang sedang di putar\
-        \n\n **ᴄᴍᴅ :** `{cmd}pause`\
-        \n └⋟ Untuk memberhentikan video/lagu yang sedang diputar\
-        \n\n **ᴄᴍᴅ :** `{cmd}resume`\
-        \n └⋟ Untuk melanjutkan pemutaran video/lagu yang sedang diputar\
-        \n\n **ᴄᴍᴅ :** `{cmd}volume` 1-200\
-        \n └⋟ Untuk mengubah volume (Membutuhkan Hak admin)\
-        \n\n **ᴄᴍᴅ :** `{cmd}playlist`\
-        \n └⋟ Untuk menampilkan daftar putar Lagu/Video\
-    "
-    }
-)
