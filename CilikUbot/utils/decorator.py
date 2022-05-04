@@ -1,6 +1,7 @@
 # Credits: @mrconfused
-# Credits Man-Userbot
-# cilik - ubot v2
+# Recode by @mrismanaziz
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# t.me/SharingUserbot & t.me/Lunatic0de
 
 import inspect
 import re
@@ -13,6 +14,15 @@ from CilikUbot import (
     CMD_HANDLER,
     CMD_LIST,
     LOAD_PLUG,
+    CILIK2,
+    CILIK3,
+    CILIK4,
+    CILIK5,
+    CILIK6,
+    CILIK7,
+    CILIK8,
+    CILIK9,
+    CILIK10,
     SUDO_HANDLER,
     SUDO_USERS,
     bot,
@@ -20,13 +30,9 @@ from CilikUbot import (
 )
 
 
-MEMEK = [1784606556]
-TITIT_HANDLER = "("
-
 def cilik_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
-    sempakabri: bool = True,
     disable_edited: bool = False,
     forword=False,
     command: str = None,
@@ -49,27 +55,30 @@ def cilik_cmd(
     if pattern is not None:
         global cilik_reg
         global sudo_reg
-        global titit_reg
         if (
             pattern.startswith(r"\#")
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            cilik_reg = sudo_reg = titit_req = re.compile(pattern)
+            cilik_reg = sudo_reg = re.compile(pattern)
         else:
             cilik_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            titit = "\\" + TITIT_HANDLER
             cilik_reg = re.compile(cilik_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
-            titit_reg = re.compile(titit + pattern)
             if command is not None:
                 cmd1 = cilik_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (cilik_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
+                    (cilik_ +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
@@ -82,41 +91,101 @@ def cilik_cmd(
                 CMD_LIST.update({file_test: [cmd1]})
 
     def decorator(func):
-        if not disable_edited:
-            bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=cilik_reg)
-            )
-        bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=cilik_reg)
-        )
-        if sempakabri:
+        if bot:
             if not disable_edited:
                 bot.add_event_handler(
-                    func,
-                    events.MessageEdited(
-                        **args, from_users=MEMEK, pattern=titit_reg
-                    ),
-                )
-            bot.add_event_handler(
-                func,
-                events.NewMessage(
-                    **args, from_users=MEMEK, pattern=titit_reg
-                ),
-            )
-        if allow_sudo:
-            if not disable_edited:
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            bot.add_event_handler(func, events.NewMessage(
+                **args, outgoing=True, pattern=cilik_reg))
+        if bot:
+            if allow_sudo:
+                if not disable_edited:
+                    bot.add_event_handler(
+                        func,
+                        events.MessageEdited(
+                            **args,
+                            from_users=list(SUDO_USERS),
+                            pattern=sudo_reg),
+                    )
                 bot.add_event_handler(
                     func,
-                    events.MessageEdited(
+                    events.NewMessage(
                         **args, from_users=list(SUDO_USERS), pattern=sudo_reg
                     ),
                 )
-            bot.add_event_handler(
-                func,
-                events.NewMessage(
-                    **args, from_users=list(SUDO_USERS), pattern=sudo_reg
-                ),
-            )
+        if CILIK2:
+            if not disable_edited:
+                CILIK2.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK2.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK3:
+            if not disable_edited:
+                CILIK3.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK3.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK4:
+            if not disable_edited:
+                CILIK4.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK4.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK5:
+            if not disable_edited:
+                CILIK5.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK5.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK6:
+            if not disable_edited:
+                CILIK6.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK6.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK7:
+            if not disable_edited:
+                CILIK7.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK7.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK8:
+            if not disable_edited:
+                CILIK8.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK8.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK9:
+            if not disable_edited:
+                CILIK9.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK9.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK10:
+            if not disable_edited:
+                CILIK10.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK10.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
         try:
             LOAD_PLUG[file_test].append(func)
         except Exception:
@@ -130,7 +199,26 @@ def cilik_handler(
     **args,
 ):
     def decorator(func):
-        bot.add_event_handler(func, events.NewMessage(**args))
+        if bot:
+            bot.add_event_handler(func, events.NewMessage(**args))
+        if CILIK2:
+            CILIK2.add_event_handler(func, events.NewMessage(**args))
+        if CILIK3:
+            CILIK3.add_event_handler(func, events.NewMessage(**args))
+        if CILIK4:
+            CILIK4.add_event_handler(func, events.NewMessage(**args))
+        if CILIK5:
+            CILIK5.add_event_handler(func, events.NewMessage(**args))
+        if CILIK6:
+            CILIK6.add_event_handler(func, events.NewMessage(**args))
+        if CILIK7:
+            CILIK7.add_event_handler(func, events.NewMessage(**args))
+        if CILIK8:
+            CILIK8.add_event_handler(func, events.NewMessage(**args))
+        if CILIK9:
+            CILIK9.add_event_handler(func, events.NewMessage(**args))
+        if CILIK10:
+            CILIK10.add_event_handler(func, events.NewMessage(**args))
         return func
 
     return decorator
@@ -155,14 +243,30 @@ def chataction(**args):
     def decorator(func):
         if bot:
             bot.add_event_handler(func, events.ChatAction(**args))
+        if CILIK2:
+            CILIK2.add_event_handler(func, events.ChatAction(**args))
+        if CILIK3:
+            CILIK3.add_event_handler(func, events.ChatAction(**args))
+        if CILIK4:
+            CILIK4.add_event_handler(func, events.ChatAction(**args))
+        if CILIK5:
+            CILIK5.add_event_handler(func, events.ChatAction(**args))
+        if CILIK6:
+            CILIK6.add_event_handler(func, events.ChatAction(**args))
+        if CILIK7:
+            CILIK7.add_event_handler(func, events.ChatAction(**args))
+        if CILIK8:
+            CILIK8.add_event_handler(func, events.ChatAction(**args))
+        if CILIK9:
+            CILIK9.add_event_handler(func, events.ChatAction(**args))
+        if CILIK10:
+            CILIK10.add_event_handler(func, events.ChatAction(**args))
         return func
 
     return decorator
-            
+
 
 def callback(**args):
-    """Assistant's callback decorator"""
-
     def decorator(func):
         if tgbot:
             tgbot.add_event_handler(func, events.CallbackQuery(**args))
