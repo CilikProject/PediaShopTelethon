@@ -19,7 +19,7 @@
 #    <t.me/TheFlicksUserbot>
 #    cilik - ubot v2
 
-from CilikUbot import BOT_USERNAME, CMD_HELP
+from CilikUbot import BOT_USERNAME, CMD_HELP, tgbot
 from CilikUbot.utils import edit_or_reply, edit_delete, cilik_cmd
 
 user = tgbot.get_me()
