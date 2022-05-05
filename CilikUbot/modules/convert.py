@@ -52,11 +52,11 @@ async def _(event):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=164977173)
             )
-            msg = await event.client.forward_messages(chat, reply_message)
+            await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
             await event.client(UnblockRequest(chat))
-            msg = await event.client.forward_messages(chat, reply_message)
+            await event.client.forward_messages(chat, reply_message)
             response = await response
         if response.text.startswith("Hi!"):
             await xx.edit(
