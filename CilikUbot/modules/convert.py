@@ -18,7 +18,7 @@ async def cevir(event):
     if not event.is_reply or not rep_msg.sticker:
         await event.reply("**Reply to sticker**")
         return
-    xxnx = await edit_or_reply(event, "`Processing...`")
+    xxnx = await event.reply("`Processing...`")
     foto = io.BytesIO()
     foto = await event.client.download_media(rep_msg.sticker, foto)
     im = Image.open(foto).convert("RGB")
