@@ -1,6 +1,5 @@
 # cilik - ubot v2
 
-import asyncio
 import io
 import os
 
@@ -8,7 +7,7 @@ from PIL import Image
 
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP
-from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd, runcmd
+from CilikUbot.utils import cilik_cmd, edit_delete, edit_or_reply
 
 
 @cilik_cmd(pattern="mtoi$")
