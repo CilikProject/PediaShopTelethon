@@ -9,7 +9,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP
-from CilikUbot.utils import cilik_cmd, edit_delete, edit_or_reply
+from CilikUbot.utils import cilik_cmd, edit_or_reply
 
 
 @cilik_cmd(pattern="mtoi$")
