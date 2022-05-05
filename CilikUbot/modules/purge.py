@@ -28,7 +28,7 @@ async def fastpurger(purg):
     itermsg = purg.client.iter_messages(chat, min_id=purg.reply_to_msg_id)
     count = 0
     if purg.reply_to_msg_id is None:
-        return await edit_delete(purg, "**Mohon Balas Ke Pesan**")
+        return await event.reply("**Reply to messages**")
     async for msg in itermsg:
         msgs.append(msg)
         count += 1
