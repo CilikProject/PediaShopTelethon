@@ -139,12 +139,12 @@ async def promote(event):
         rank = "admin"
     if not user:
         return
-    eventcilik = await edit_or_reply(event, "`Promoting...`")
+    eventcilik = await event.reply("`Promoting...`")
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
         return await eventcilik.edit(NO_PERM)
-    await edit_delete(eventcilik, "`Promoted Successfully!`", 30)
+    await edit_delete(eventcilik, "**Promoted Successfully!**", 30)
 
 
 @cilik_cmd(pattern="demote(?:\s|$)([\s\S]*)")
@@ -154,7 +154,7 @@ async def demote(event):
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    eventcilik = await edit_or_reply(event, "`Demoting...`")
+    eventcilik = await event.reply("`Demoting...`")
     newrights = ChatAdminRights(
         add_admins=None,
         invite_users=None,
@@ -169,7 +169,7 @@ async def demote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
         return await eventcilik.edit(NO_PERM)
-    await edit_delete(eventcilik, "`Demoted Successfully!`", 30)
+    await edit_delete(eventcilik, "**Demoted Successfully!**", 30)
 
 
 @cilik_cmd(pattern="ban(?:\s|$)([\s\S]*)")
@@ -185,7 +185,7 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    cilik = await edit_or_reply(bon, "`Processing Banned...`")
+    cilik = await bon.reply("`Processing Banned...`")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
@@ -211,14 +211,14 @@ async def nothanos(unbon):
     creator = chat.creator
     if not admin and not creator:
         return await edit_delete(unbon, NO_ADMIN)
-    cilik = await edit_or_reply(unbon, "`Processing...`")
+    cilik = await unbon.reply("`Processing...`")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await edit_delete(cilik, "`Unban Berhasil Dilakukan!`")
+        await edit_delete(cilik, "**Unbaned Successfuly!**")
     except UserIdInvalidError:
         await edit_delete(cilik, "`Sepertinya Terjadi ERROR!`")
 
@@ -235,7 +235,7 @@ async def spider(spdr):
     creator = chat.creator
     if not admin and not creator:
         return await edit_or_reply(spdr, NO_ADMIN)
-    cilik = await edit_or_reply(spdr, "`Processing...`")
+    cilik = await spdr.reply("`Processing...`")
     user, reason = await get_user_from_event(spdr)
     if not user:
         return
@@ -284,7 +284,7 @@ async def unmoot(unmot):
         from CilikUbot.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         return await unmot.edit(NO_SQL)
-    cilik = await edit_or_reply(unmot, "`Processing...`")
+    cilik = await unmot.reply("`Processing...`")
     user = await get_user_from_event(unmot)
     user = user[0]
     if not user:
@@ -294,7 +294,7 @@ async def unmoot(unmot):
         return await edit_delete(unmot, "**ERROR! Pengguna Sudah Tidak Dibisukan.**")
     try:
         await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
-        await edit_delete(cilik, "**Berhasil Melakukan Unmute!**")
+        await edit_delete(cilik, "**Unmuted Successfully!**")
     except UserIdInvalidError:
         return await edit_delete(cilik, "**Terjadi ERROR!**")
 
@@ -342,7 +342,7 @@ async def ungmoot(un_gmute):
         from CilikUbot.modules.sql_helper.gmute_sql import ungmute
     except AttributeError:
         return await edit_delete(un_gmute, NO_SQL)
-    cilik = await edit_or_reply(un_gmute, "`Processing...`")
+    cilik = await un_gmute.reply("`Processing...`")
     user = await get_user_from_event(un_gmute)
     user = user[0]
     if not user:
@@ -351,7 +351,7 @@ async def ungmoot(un_gmute):
     if ungmute(user.id) is False:
         await cilik.edit("**ERROR!** Pengguna Sedang Tidak Di Gmute.")
     else:
-        await edit_delete(un_gmute, "**Berhasil! Pengguna Sudah Tidak Dibisukan**")
+        await edit_delete(un_gmute, "**Succeed! User Unblocked**")
 
 
 @cilik_cmd(pattern="gmute(?: |$)(.*)")
@@ -366,7 +366,7 @@ async def gspider(gspdr):
         from CilikUbot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
         return await gspdr.edit(NO_SQL)
-    cilik = await edit_or_reply(gspdr, "`Processing...`")
+    cilik = await gspdr.reply("`Processing...`")
     user, reason = await get_user_from_event(gspdr)
     if not user:
         return
@@ -375,7 +375,7 @@ async def gspider(gspdr):
         return await cilik.edit("**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
     if user.id in DEVS:
         return await cilik.edit("**Gagal Global Mute, Dia Adalah Pembuat Saya 🤪**")
-    await cilik.edit("**Berhasil Membisukan Pengguna!**")
+    await cilik.edit("**Successfully Muted User**")
     if gmute(user.id) is False:
         await edit_delete(gspdr, "**ERROR! Pengguna Sudah Dibisukan.**")
     elif reason:
@@ -400,7 +400,7 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "**Grup Bersih, Tidak Menemukan Akun Terhapus.**"
     if con != "clean":
-        await show.edit("`Mencari Akun Depresi...`")
+        await show.reply("`Searching for deleted accounts...`")
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
@@ -416,7 +416,7 @@ async def rm_deletedacc(show):
     creator = chat.creator
     if not admin and not creator:
         return await show.edit("**Maaf Kamu Bukan Admin!**")
-    await show.edit("`Menghapus Akun Depresi...`")
+    await show.edit("`Delete deleted account...`")
     del_u = 0
     del_a = 0
     async for user in show.client.iter_participants(show.chat_id):
@@ -475,7 +475,7 @@ async def get_admin(show):
 async def pin(event):
     to_pin = event.reply_to_msg_id
     if not to_pin:
-        return await edit_delete(event, "`Reply Pesan untuk Melakukan Pin.`", 30)
+        return await edit_delete(event, "`Reply Message to Pin.`", 30)
     options = event.pattern_match.group(1)
     is_silent = bool(options)
     try:
@@ -484,7 +484,7 @@ async def pin(event):
         return await edit_delete(event, NO_PERM, 5)
     except Exception as e:
         return await edit_delete(event, f"`{e}`", 5)
-    await edit_delete(event, "`Pinned Successfully!`")
+    await event.reply("**Pinned Successfully!**")
 
 
 @cilik_cmd(pattern="unpin( all|$)")
@@ -513,7 +513,7 @@ async def pin(event):
         return await edit_delete(event, NO_PERM, 5)
     except Exception as e:
         return await edit_delete(event, f"`{e}`", 5)
-    await edit_delete(event, "`Unpinned Successfully!`")
+    await event.reply("**Unpinned Successfully!**")
 
 
 @cilik_cmd(pattern="kick(?: |$)(.*)")
@@ -527,7 +527,7 @@ async def kick(usr):
     user, reason = await get_user_from_event(usr)
     if not user:
         return await edit_delete(usr, "**Tidak Dapat Menemukan Pengguna.**")
-    xxnx = await edit_or_reply(usr, "`Processing...`")
+    xxnx = await usr.reply("`Processing...`")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
@@ -535,11 +535,11 @@ async def kick(usr):
         return await edit_delete(usr, f"{NO_PERM}\n{e}")
     if reason:
         await xxnx.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) **Telah Dikick Dari Grup**\n**Alasan:** `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}) **Has been kicked from the group**\n**Reason:** `{reason}`"
         )
     else:
         await xxnx.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) **Telah Dikick Dari Grup**",
+            f"[{user.first_name}](tg://user?id={user.id}) **Has been kicked from the groupHas been kicked from the group**",
         )
 
 
