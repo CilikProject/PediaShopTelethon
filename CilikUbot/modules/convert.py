@@ -16,7 +16,7 @@ from CilikUbot.utils import cilik_cmd, edit_delete, edit_or_reply
 async def cevir(event):
     rep_msg = await event.get_reply_message()
     if not event.is_reply or not rep_msg.sticker:
-        await edit_delete(event, "**Reply to sticker**")
+        await event.reply("**Reply to sticker**")
         return
     xxnx = await edit_or_reply(event, "`Processing...`")
     foto = io.BytesIO()
@@ -43,7 +43,7 @@ async def _(event):
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await edit_delete(event, "sir, This is not a image ")
+        await event.reply("**Reply to Image**")
         return
     chat = "@buildstickerbot"
     xx = await event.reply("`Processing...`")
@@ -66,7 +66,6 @@ async def _(event):
             await xx.delete()
             await event.client.send_read_acknowledge(conv.chat_id)
             await event.client.send_message(event.chat_id, response.message)
-            await event.client.delete_message(event.chat_id, [msg.id, response.id])
 
 
 CMD_HELP.update(
