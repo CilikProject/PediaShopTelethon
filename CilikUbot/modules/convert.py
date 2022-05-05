@@ -37,8 +37,8 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await edit_delete(
-            event, "sir this is not a image message reply to image message"
+        await event.reply(
+            "**Reply To Image**"
         )
         return
     reply_message = await event.get_reply_message()
