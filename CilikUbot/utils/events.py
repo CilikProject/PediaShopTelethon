@@ -1,6 +1,6 @@
 import pybase64
 from telethon.tl.types import MessageEntityMentionName
-
+from telethon.tl.functions.channels import JoinChannelRequest as grey
 
 from .logger import logging
 from .tools import edit_delete
