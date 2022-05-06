@@ -12,7 +12,7 @@ from CilikUbot import BOT_VER as version
 from CilikUbot import BOTLOG_CHATID
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10, bot, branch, tgbot
-from CilikUbot.utils import checking
+from CilikUbot.utils.events import checking
 
 MSG_ON = """
 🔥 **Cilik - Ubot Berhasil Di Aktifkan**
