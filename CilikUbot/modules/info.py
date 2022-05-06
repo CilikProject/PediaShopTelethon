@@ -2,10 +2,8 @@ import os
 import json
 import requests
 from telethon import events
-from telethon.errors.rpcerrorlist import ChatAdminRequiredError, YouBlockedUserError
+from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
-from telethon.tl.functions.messages import ExportChatInviteRequest
-from telethon.tl.types import ChannelParticipantsKicked
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
@@ -13,47 +11,33 @@ from telethon.utils import get_input_location
 
 from CilikUbot.modules.sql_helper.globals import gvarstatus
 from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from CilikUbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
-import asyncio
-import csv
-import random
 from datetime import datetime
 from math import sqrt
-from secrets import choice
 
 from emoji import emojize
-from telethon import functions
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
     ChannelPublicGroupNaError,
 )
-from telethon.errors.rpcerrorlist import (
-    UserAlreadyParticipantError,
-    UserNotMutualContactError,
-    UserPrivacyRestrictedError,
-)
 from telethon.tl.functions.channels import (
     GetFullChannelRequest,
     GetParticipantsRequest,
-    InviteToChannelRequest,
 )
 from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import (
     ChannelParticipantAdmin,
     ChannelParticipantsAdmins,
     ChannelParticipantsBots,
-    InputPeerUser,
     MessageActionChannelMigrateFrom,
 )
 from telethon.utils import get_input_location
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.events import register
-from userbot.modules.ping import absen
-from userbot.utils import edit_delete, edit_or_reply, get_user_from_event, man_cmd
+from userbot.utils import edit_delete, edit_or_reply
 
 @cilik_cmd(pattern="limit(?: |$)(.*)")
 async def _(event):
