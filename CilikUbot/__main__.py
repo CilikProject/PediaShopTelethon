@@ -13,9 +13,8 @@ from pytgcalls import __version__ as pytgcalls
 from pytgcalls import idle
 from telethon import version
 
-from CilikUbot import BOT_TOKEN
 from CilikUbot import BOT_VER as ubotversion
-from CilikUbot import BOTLOG_CHATID, LOGS, LOOP, bot
+from CilikUbot import LOGS, LOOP, bot
 from CilikUbot.clients import cilik_userbot_on, multicilik
 from CilikUbot.core.git import git
 from CilikUbot.modules import ALL_MODULES
