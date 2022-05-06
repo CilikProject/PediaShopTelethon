@@ -1,6 +1,10 @@
 import os
 import json
 import requests
+from datetime import datetime
+from math import sqrt
+from emoji import emojize
+
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
@@ -8,15 +12,6 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-
-from CilikUbot.modules.sql_helper.globals import gvarstatus
-from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
-from datetime import datetime
-from math import sqrt
-
-from emoji import emojize
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
@@ -35,10 +30,15 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_input_location
 
+from CilikUbot.modules.sql_helper.globals import gvarstatus
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
+
 
 @cilik_cmd(pattern="limit(?: |$)(.*)")
 async def _(event):
-    xx = await edit_or_reply(event, "`Processing...`")
+    xx = await event.reply("`Processing...`")
     async with event.client.conversation("@SpamBot") as conv:
         try:
             response = conv.wait_event(
@@ -57,7 +57,7 @@ async def _(event):
         
 @cilik_cmd(pattern="info(?: |$)(.*)")
 async def who(event):
-    xx = await edit_or_reply(event, "`Mengambil Informasi Pengguna Ini...`")
+    xx = await event.reply("`Mengambil Informasi Pengguna Ini...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user(event)
@@ -184,7 +184,7 @@ async def fetch_info(replied_user, event):
 
 @cilik_cmd(pattern="cinfo(?: |$)(.*)")
 async def info(event):
-    xx = await edit_or_reply(event, "`Menganalisis Obrolan Ini...`")
+    xx = await event.reply("`Menganalisis Obrolan Ini...`")
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
