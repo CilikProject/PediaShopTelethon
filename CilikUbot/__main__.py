@@ -10,8 +10,6 @@ from importlib import import_module
 from pytgcalls import idle
 
 from CilikUbot import (
-    BOTLOG_CHATID,
-    BOT_TOKEN,
     BOT_VER,
     LOGS,
     bot,
