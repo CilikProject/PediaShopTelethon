@@ -35,9 +35,6 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_input_location
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply
 
 @cilik_cmd(pattern="limit(?: |$)(.*)")
 async def _(event):
