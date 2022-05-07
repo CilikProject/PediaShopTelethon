@@ -75,7 +75,7 @@ async def stop_voice(c):
 
 @cilik_cmd(pattern="vcinvite")
 async def _(c):
-    xxnx = await edit_or_reply(c, "`Inviting Members to Voice Chat...`")
+    xxnx = await c.reply("`Inviting Members to Voice Chat...`")
     users = []
     z = 0
     async for x in c.client.iter_participants(c.chat_id):
@@ -108,7 +108,7 @@ async def change_title(e):
         return
     try:
         await e.client(settitle(call=await get_call(e), title=title.strip()))
-        await edit_or_reply(e, f"**Berhasil Mengubah Judul VCG Menjadi** `{title}`")
+        await e.reply(f"**Berhasil Mengubah Judul VCG Menjadi** `{title}`")
     except Exception as ex:
         await edit_delete(e, f"**ERROR:** `{ex}`")
 
@@ -116,7 +116,7 @@ async def change_title(e):
 @cilik_cmd(pattern="joinvc(?: |$)(.*)")
 @register(pattern=r"^\.joinvcs(?: |$)(.*)", sudo=True)
 async def _(event):
-    Man = await edit_or_reply(event, "`Processing...`")
+    Man = await event.reply("`Processing...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
@@ -138,7 +138,7 @@ async def _(event):
                 stream_type=StreamType().local_stream,
             )
             await Man.edit(
-                f"Joined to voicechat `{chat_id}`"
+                f"`__Joined Voicechat__`✅"
             )
         except AlreadyJoinedError:
             await call_py.leave_group_call(chat_id)
@@ -168,7 +168,7 @@ async def vc_end(event):
             await call_py.leave_group_call(chat_id)
             await edit_delete(
                 Man,
-                f"Leave to voicechat `{chat_id}`",
+                f"`__Leave Voicechat__`✅",
             )
         except Exception as e:
             await Man.edit(f"**INFO:** `{e}`")
@@ -176,15 +176,15 @@ async def vc_end(event):
 
 CMD_HELP.update(
     {
-        "Vctools": f"**Plugin : **`Vctools`\
-        \n\n  •  **Syntax :** `{cmd}startvc`\
-        \n  •  **Function : **Untuk Memulai voice chat group\
-        \n\n  •  **Syntax :** `{cmd}stopvc`\
-        \n  •  **Function : **Untuk Memberhentikan voice chat group\
-        \n\n  •  **Syntax :** `{cmd}vctitle` <title vcg>\
-        \n  •  **Function : **Untuk Mengubah title/judul voice chat group\
-        \n\n  •  **Syntax :** `{cmd}vcinvite`\
-        \n  •  **Function : **Mengundang Member group ke voice chat group (anda harus sambil bergabung ke OS/VCG)\
+        "Vctools": f"**⪼ Plugin : **`Vctools`\
+        \n\n **ᴄᴍᴅ :** `{cmd}startvc`\
+        \n └⋟ Untuk Memulai voice chat group\
+        \n\n **ᴄᴍᴅ :** `{cmd}stopvc`\
+        \n └⋟ Untuk Memberhentikan voice chat group\
+        \n\n **ᴄᴍᴅ :** `{cmd}vctitle` <title vcg>\
+        \n └⋟ Untuk Mengubah title/judul voice chat group\
+        \n\n **ᴄᴍᴅ :** `{cmd}vcinvite`\
+        \n └⋟ Mengundang Member group ke voice chat group (anda harus sambil bergabung ke OS/VCG)\
     "
     }
 )
