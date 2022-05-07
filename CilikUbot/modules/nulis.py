@@ -5,7 +5,7 @@
 import os
 
 from PIL import Image, ImageDraw, ImageFont
-from userbot.utils import cilik_cmd, edit_or_reply, edit_delete, text_set
+from userbot.utils import cilik_cmd, edit_delete, text_set
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP
 
