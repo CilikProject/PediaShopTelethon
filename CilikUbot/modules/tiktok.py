@@ -10,7 +10,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP
-from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
+from CilikUbot.utils import cilik_cmd, edit_delete
 
 # Alvin Gans
 
