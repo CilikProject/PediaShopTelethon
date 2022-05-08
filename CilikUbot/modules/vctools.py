@@ -23,7 +23,7 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP, call_py
 from CilikUbot.events import register
-from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
+from CilikUbot.utils import cilik_cmd, edit_delete
 
 
 async def get_call(event):
