@@ -50,7 +50,7 @@ async def start_voice(c):
         return
     try:
         await c.client(startvc(c.chat_id))
-        await c.reply("**Voice Chat Started...**")
+        await c.reply("**Voice Chat Started**")
     except Exception as ex:
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
@@ -68,7 +68,7 @@ async def stop_voice(c):
         return
     try:
         await c.client(stopvc(await get_call(c)))
-        await c.reply("**Voice Chat Stopped...**")
+        await c.reply("**Voice Chat Stopped**")
     except Exception as ex:
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
@@ -154,7 +154,7 @@ async def _(event):
 @cilik_cmd(pattern="leavevc(?: |$)(.*)")
 @register(pattern=r"^\.leavevcs(?: |$)(.*)", sudo=True)
 async def vc_end(event):
-    Man = await edit_or_reply(event, "`Processing...`")
+    Man = await event.reply("`Processing...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
