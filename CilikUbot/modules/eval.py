@@ -19,7 +19,7 @@ from CilikUbot.utils import cilik_cmd, edit_or_reply
 p, pp = print, pprint
 
 
-@cilik_cmd(pattern="eval(?:\s|$)([\s\S]*)")
+@cilik_cmd(pattern="e(?:\s|$)([\s\S]*)")
 async def _(event):
     expression = event.pattern_match.group(1)
     if not expression:
@@ -143,7 +143,7 @@ async def terminal_runner(event):
         return await edit_or_reply(event, "`Give a command or use .help term for an example.`")
     if command in ("CilikUbot.session", "config.env"):
         return await edit_or_reply(event, "`Itu operasi yang berbahaya! Tidak diperbolehkan!`")
-    await event.edit("`Processing...`")
+    await event.reply("`Processing...`")
     process = await asyncio.create_subprocess_shell(
         command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.STDOUT
     )
