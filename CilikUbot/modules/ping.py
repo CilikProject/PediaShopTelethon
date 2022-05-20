@@ -51,5 +51,5 @@ async def _(yanto):
         "    **peer_users:** `999999 users`\n"
         "    **peer_groups:** `full groups`\n"
         "    **yanto_uptime:** `seabad`\n"
-        "    **waktu yanto vcs:** `2 Jam seperapat`\n")
+        "    **waktu yanto vcs:** `2 Jam`\n")
     
