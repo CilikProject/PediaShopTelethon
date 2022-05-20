@@ -5,7 +5,6 @@
 #
 """ Userbot help command """
 
-from CilikUbot import CHANNEL
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP, ICON_HELP
 from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
