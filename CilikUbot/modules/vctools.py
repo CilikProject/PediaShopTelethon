@@ -138,7 +138,7 @@ async def _(event):
                 stream_type=StreamType().local_stream,
             )
             await Man.edit(
-                "__Joined Voicechat__ ✅"
+                "__YantoUbot Joined VCG__ ✅"
             )
         except AlreadyJoinedError:
             await call_py.leave_group_call(chat_id)
@@ -168,7 +168,7 @@ async def vc_end(event):
             await call_py.leave_group_call(chat_id)
             await edit_delete(
                 Man,
-                "__Leave Voicechat__ ✅",
+                "__YantoUbot Leave VCG__ ✅",
             )
         except Exception as e:
             await Man.edit(f"**INFO:** `{e}`")
