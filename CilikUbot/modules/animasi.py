@@ -11,8 +11,8 @@ async def _(event):
     if event.fwd_from:
         return
     animation_interval = 0.2
-    animation_ttl = range(30)
-    event = await edit_or_reply(event, "🗿")
+    animation_ttl = range(24)
+    event = await edit_or_reply(event, "Y")
     animation_chars = [
         "**Y**",
         "**Ya**",
@@ -41,7 +41,7 @@ async def _(event):
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 30])
+        await event.edit(animation_chars[i % 24])
 
 
 @cilik_cmd(pattern="bulan$")
