@@ -52,4 +52,20 @@ async def _(yanto):
         "    **peer_groups:** `full groups`\n"
         "    **yanto_uptime:** `seabad`\n"
         "    **waktu yanto vcs:** `2 Jam`\n")
+
+
+@cilik_cmd(pattern="(?:system|on)\s?(.)?")
+async def amireallyalive(alive):
+    user = await bot.get_me()
+    uptime = await get_readable_time((time.time() - StartTime))
+    output = (
+        f"**[YantoUbot](https://xnxx.com) is Alive Masseh Angjay 🗿.**\n\n"
+        f"🗿 **Master Yanto :** [{user.first_name}](tg://user?id={user.id}) \n"
+        f"🗿 **Module Yanto :** `1000 Modules` \n"
+        f"🗿 **Versi Yanto :** `v3.2.0` \n"
+        f"🗿 **Piton Yanto :** `anggora` \n"
+        f"🗿 **Pytgcalls :** `beta punya` \n"
+        f"🗿 **Pyrogram :** `2.0.1` \n"
+        f"🗿 **Bot Hidup :** `{uptime}` \n\n"
+    )
     
