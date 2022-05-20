@@ -12,13 +12,13 @@ from CilikUbot import CMD_HELP
 from CilikUbot.utils import cilik_cmd
 
 
-@cilik_cmd(pattern="mtoi$")
+@cilik_cmd(pattern="yantoi$")
 async def cevir(event):
     rep_msg = await event.get_reply_message()
     if not event.is_reply or not rep_msg.sticker:
-        await event.reply("**Reply to sticker**")
+        await event.reply("**Reply to Sticker**")
         return
-    xxnx = await event.reply("`Processing...`")
+    xxnx = await event.reply("`Wussh Yanto sedang menyulap sticker ini menjadi gambar...`")
     foto = io.BytesIO()
     foto = await event.client.download_media(rep_msg.sticker, foto)
     im = Image.open(foto).convert("RGB")
@@ -32,7 +32,7 @@ async def cevir(event):
     os.remove("sticker.png")
 
 
-@cilik_cmd(pattern="mtos$")
+@cilik_cmd(pattern="yantos$")
 async def _(event):
     if event.fwd_from:
         return
@@ -46,7 +46,7 @@ async def _(event):
         await event.reply("**Reply to Image**")
         return
     chat = "@buildstickerbot"
-    xx = await event.reply("`Processing...`")
+    xx = await event.reply("`Wussh Yanto sedang menyulap gambar ini jadi sticker...`")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -71,9 +71,9 @@ async def _(event):
 CMD_HELP.update(
     {
         "Converter": f"**➢ Plugin : **`Converter`\
-        \n\n **ᴄᴍᴅ :** `{cmd}mtos`\
+        \n\n **ᴄᴍᴅ :** `{cmd}yantos`\
         \n └⋟ Untuk Mengconvert sticker ke foto\
-        \n\n **ᴄᴍᴅ :** `{cmd}mtoi`\
+        \n\n **ᴄᴍᴅ :** `{cmd}yantoi`\
         \n └⋟ Untuk Mengconvert foto ke sticker\
     "
     }
