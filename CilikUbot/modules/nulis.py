@@ -17,8 +17,8 @@ async def writer(event):
     elif event.pattern_match.group(1).strip():
         text = event.text.split(maxsplit=1)[1]
     else:
-        return await edit_delete(event, "Berikan Beberapa Teks")
-    k = await event.reply("Sedang menulis...")
+        return await edit_delete(event, "Berikan Yanto Beberapa Teks")
+    k = await event.reply("Yanto Sedang menulis...")
     img = Image.open("CilikUbot/resources/kertas.jpg")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("CilikUbot/resources/assfont.ttf", 30)
