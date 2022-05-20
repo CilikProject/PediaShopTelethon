@@ -45,11 +45,11 @@ async def _(pang):
 @cilik_cmd(pattern="yanto$")
 async def _(yanto):
     await yanto.reply(
-        "**Wusshh YantoUbot Is Alive Masseh Angjay🗿:**\n
-        "    **dc_id:** `Jepang Barat`\n
-        "    **ping_dc:** `1000ms`\n
-        "    **peer_users:** `999999 users`\n
-        "    **peer_groups:** `full groups`\n
-        "    **yanto_uptime:** `seabad`\n
+        "**Wusshh YantoUbot Is Alive Masseh Angjay🗿:**\n"
+        "    **dc_id:** `Jepang Barat`\n"
+        "    **ping_dc:** `1000ms`\n"
+        "    **peer_users:** `999999 users`\n"
+        "    **peer_groups:** `full groups`\n"
+        "    **yanto_uptime:** `seabad`\n"
         "    **waktu yanto vcs:** `2 Jam seperapat`\n")
     
