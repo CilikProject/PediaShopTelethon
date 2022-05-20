@@ -16,7 +16,7 @@ import urllib3
 
 from CilikUbot import BOTLOG, BOTLOG_CHATID
 from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS
+from CilikUbot import HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS
 from CilikUbot.modules.sql_helper.globals import addgvar, delgvar, gvarstatus
 from CilikUbot.utils import edit_or_reply, cilik_cmd
 
