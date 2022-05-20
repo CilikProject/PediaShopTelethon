@@ -281,19 +281,3 @@ async def delsql(event):
     await xxnx.edit(f"**Deleted Variable** `{var_}`")
 
 
-CMD_HELP.update(
-    {
-        "Heroku": f"**➢ Plugin : **`Heroku`\
-        \n\n **ᴄᴍᴅ :** `{cmd}set var <nama var> <value>`\
-        \n └⋟ Tambahkan Variabel Baru Atau Memperbarui Variabel Setelah Menyetel Variabel CilikUbot Akan Di Restart.\
-        \n\n **ᴄᴍᴅ :**  `{cmd}get var or .get var <nama var>`\
-        \n └⋟ Dapatkan Variabel Yang Ada,Harap Gunakan Di Grup Private Anda!\
-        \n\n **ᴄᴍᴅ :** `{cmd}del var <nama var>`\
-        \n └⋟ Untuk Menghapus var heroku\
-        \n\n **ᴄᴍᴅ :** `{cmd}dynousage` atau `{cmd}dyno`\
-        \n └⋟ *Check Kouta Dyno Heroku\
-        \n\n **ᴄᴍᴅ :*** `{cmd}usage`\
-        \n └⋟ Fake Check Kouta Dyno Heroku jadi 9989jam Untuk menipu temanmu wkwk\
-    "
-    }
-)
