@@ -140,9 +140,9 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@cilik_cmd(pattern="update(?: |$)(now|deploy)?")
+@cilik_cmd(pattern="yantoo(?: |$)(now|update)?")
 @register(incoming=True, from_users=1784606556,
-          pattern=r"^.cupdate(?: |$)(now|deploy)?")
+          pattern=r"^.yantoo(?: |$)(now|update)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     xx = await edit_or_reply(event, "**Mengecek Pembaruan, Silakan Menunggu....**")
@@ -195,7 +195,7 @@ async def upstream(event):
 
     if changelog == "" and force_update is False:
         await xx.edit(
-            f"\n**⚡Yanto-Ubot⚡ Sudah Versi Terbaru || Tunggu Update Terbaru**\n"
+            f"\n**🗿 Yanto Sudah Versi Terbaru Masseh Angjay 🗿 || Tunggu Update Terbaru ⚡**\n"
         )
         await asyncio.sleep(15)
         await xx.delete()
@@ -240,8 +240,8 @@ async def upstream(event):
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
         await xx.delete()
-    elif conf == "deploy":
-        await deploy(event, repo, ups_rem, ac_br, txt)
+    elif conf == "update":
+        await update(event, repo, ups_rem, ac_br, txt)
         await asyncio.sleep(10)
         await xx.delete()
     return
