@@ -15,15 +15,13 @@ from asyncio.subprocess import PIPE as asyncPIPE
 from datetime import datetime
 from os import remove
 from platform import python_version
-from shutil import which
 
 import psutil
 from pytgcalls import __version__ as pytgcalls
 from telethon import __version__, version
 
-from CilikUbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CHANNEL
-from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import CMD_HELP, GROUP, StartTime, bot
+from CilikUbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER
+from CilikUbot import CMD_HELP, StartTime, bot
 from CilikUbot.utils import bash, edit_or_reply, cilik_cmd
 
 from .ping import get_readable_time
