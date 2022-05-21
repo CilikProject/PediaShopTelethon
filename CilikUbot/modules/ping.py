@@ -2,7 +2,6 @@ import time
 from datetime import datetime
 from CilikUbot import StartTime
 from CilikUbot.utils import cilik_cmd
-from CilikUbot import bot
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
