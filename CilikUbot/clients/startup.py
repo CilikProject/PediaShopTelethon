@@ -23,6 +23,16 @@ from CilikUbot import (
     CILIK8,
     CILIK9,
     CILIK10,
+    CILIK11,
+    CILIK12,
+    CILIK13,
+    CILIK14,
+    CILIK15,
+    CILIK16,
+    CILIK17,
+    CILIK18,
+    CILIK19,
+    CILIK20
     STRING_2,
     STRING_3,
     STRING_4,
@@ -31,7 +41,17 @@ from CilikUbot import (
     STRING_7,
     STRING_8,
     STRING_9,
-    STRING_10,  
+    STRING_10,
+    STRING_11
+    STRING_12,
+    STRING_13,
+    STRING_14,
+    STRING_15,
+    STRING_16,
+    STRING_17,
+    STRING_18,
+    STRING_19,
+    STRING_20,  
     STRING_SESSION,
     blacklistcilik,
     bot,
@@ -201,6 +221,146 @@ def multicilik():
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
+            LOGS.info(str(e))
+
+    if STRING_11:
+        try:
+            CILIK11.start()
+            LOOP.run_until_complete(cilik_client(CILIK11))
+            user = CILIK11.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_11 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e
+
+    if STRING_12:
+        try:
+            CILIK12.start()
+            LOOP.run_until_complete(cilik_client(CILIK12))
+            user = CILIK12.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_12 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+
+    if STRING_13:
+        try:
+            CILIK13.start()
+            LOOP.run_until_complete(cilik_client(CILIK13))
+            user = CILIK13.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_13 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+
+    if STRING_14:
+        try:
+            CILIK14.start()
+            LOOP.run_until_complete(cilik_client(CILIK14))
+            user = CILIK14.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_14 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+
+    if STRING_15:
+        try:
+            CILIK15.start()
+            LOOP.run_until_complete(cilik_client(CILIK15))
+            user = CILIK15.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_15 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+            
+    if STRING_16:
+        try:
+            CILIK16.start()
+            LOOP.run_until_complete(cilik_client(CILIK16))
+            user = CILIK16.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_16 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+
+    if STRING_17:
+        try:
+            CILIK17.start()
+            LOOP.run_until_complete(cilik_client(CILIK17))
+            user = CILIK17.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_17 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+
+    if STRING_18:
+        try:
+            CILIK18.start()
+            LOOP.run_until_complete(cilik_client(CILIK18))
+            user = CILIK18.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_18 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+
+    if STRING_19:
+        try:
+            CILIK19.start()
+            LOOP.run_until_complete(cilik_client(CILIK19))
+            user = CILIK19.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_19 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
+            LOGS.info(str(e))
+            
+    if STRING_20:
+        try:
+            CILIK20.start()
+            LOOP.run_until_complete(cilik_client(CILIK20))
+            user = CILIK20.get_me()
+            name = user.first_name
+            uid = user.id
+            LOGS.info(f"STRING_20 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
+            if user.id in blacklistcilik:
+                LOGS.warning(MSG_BLACKLIST.format(name, version))
+                sys.exit(1)
+        except Exception as e:
             LOGS.info(str(e))            
 
     if BOT_TOKEN:
@@ -233,5 +393,25 @@ def multicilik():
     if not STRING_9:
         failed += 1 
     if not STRING_10:
+        failed += 1
+    if not STRING_11:
+        failed += 1
+    if not STRING_12:
+        failed += 1
+    if not STRING_13:
+        failed += 1
+    if not STRING_14:
+        failed += 1
+    if not STRING_15:
+        failed += 1
+    if not STRING_16:
+        failed += 1
+    if not STRING_17:
+        failed += 1
+    if not STRING_18:
+        failed += 1
+    if not STRING_19:
+        failed += 1 
+    if not STRING_20:
         failed += 1         
     return failed
