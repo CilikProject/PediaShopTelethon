@@ -15,7 +15,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from CilikUbot import CMD_HANDLER, CMD_LIST, DEFAULT, DEVS, CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10, bot
+from CilikUbot import CMD_HANDLER, CMD_LIST, DEFAULT, DEVS, CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10, CILIK11, CILIK12, CILIK13, CILIK14, CILIK15, CILIK16, CILIK17, CILIK18, CILIK19, CILIK20, bot
 
 
 def cilik_cmd(pattern=None, command=None, **args):
@@ -286,6 +286,47 @@ def register(**args):
                 CILIK10.add_event_handler(
                     wrapper, events.MessageEdited(**args))
             CILIK10.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK11:
+            if not disable_edited:
+                CILIK11.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK11.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK12:
+            if not disable_edited:
+                CILIK12.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK12.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK13:
+            if not disable_edited:
+                CILIK13.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK13.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK14:
+            if not disable_edited:
+                CILIK14.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK14.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK15:
+            if not disable_edited:
+                CILIK15.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK5.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK16:
+            if not disable_edited:
+                CILIK16.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK6.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK17:
+            if not disable_edited:
+                CILIK17.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK17.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK18:
+            if not disable_edited:
+                CILIK18.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK18.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK19:
+            if not disable_edited:
+                CILIK19.add_event_handler(wrapper, events.MessageEdited(**args))
+            CILIK19.add_event_handler(wrapper, events.NewMessage(**args))
+        if CILIK20:
+            if not disable_edited:
+                CILIK20.add_event_handler(
+                    wrapper, events.MessageEdited(**args))
+            CILIK20.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
 
     return decorator
