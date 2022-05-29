@@ -11,7 +11,7 @@ from telethon.tl.types import ChatAdminRights
 from CilikUbot import BOT_VER as version
 from CilikUbot import BOTLOG_CHATID
 from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10, bot, branch, tgbot
+from CilikUbot import CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10, CILIK11, CILIK12, CILIK13, CILIK14, CILIK15, CILIK16, CILIK17, CILIK18, CILIK19, CILIK20, bot, branch, tgbot
 from CilikUbot.utils.events import checking
 
 MSG_ON = """
@@ -154,6 +154,116 @@ async def cilik_userbot_on():
             await asyncio.sleep(3)
             if BOTLOG_CHATID != 0:
                 await CILIK10.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass            
+    try:
+        if CILIK11:
+            await checking(CILIK11)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK11.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass                
+    try:
+        if CILIK12:
+            await checking(CILIK12)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK12.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK13:
+            await checking(CILIK13)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK13.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK14:
+            await checking(CILIK14)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK14.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK15:
+            await checking(CILIK15)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK15.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK16:
+            await checking(CILIK16)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK16.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK17:
+            await checking(CILIK17)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK17.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK18:
+            await checking(CILIK18)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK18.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK19:
+            await checking(CILIK19)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK19.send_message(
+                    BOTLOG_CHATID,
+                    MSG_ON.format(version, branch, cmd),
+                )
+    except BaseException:
+        pass
+    try:
+        if CILIK20:
+            await checking(CILIK20)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await CILIK20.send_message(
                     BOTLOG_CHATID,
                     MSG_ON.format(version, branch, cmd),
                 )
