@@ -9,7 +9,7 @@ import telethon.utils
 from telethon.tl.functions.users import GetFullUserRequest
 
 
-async def clients_list(SUDO_USERS, bot, CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10):
+async def clients_list(SUDO_USERS, bot, CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CILIK9, CILIK10, CILIK11, CILIK12, CILIK13, CILIK14, CILIK15, CILIK16, CILIK17, CILIK18, CILIK19, CILIK20):
     user_ids = list(SUDO_USERS) or []
     main_id = await bot.get_me()
     user_ids.append(main_id.id)
@@ -74,6 +74,76 @@ async def clients_list(SUDO_USERS, bot, CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, 
         if CILIK10 is not None:
             id10 = await CILIK10.get_me()
             user_ids.append(id10.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK11 is not None:
+            id11 = await CILIK11.get_me()
+            user_ids.append(id11.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK12 is not None:
+            id12 = await CILIK12.get_me()
+            user_ids.append(id12.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK13 is not None:
+            id13 = await CILIK13.get_me()
+            user_ids.append(id13.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK14 is not None:
+            id14 = await CILIK14.get_me()
+            user_ids.append(id14.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK15 is not None:
+            id15 = await CILIK15.get_me()
+            user_ids.append(id15.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK16 is not None:
+            id16 = await CILIK16.get_me()
+            user_ids.append(id16.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK17 is not None:
+            id17 = await CILIK17.get_me()
+            user_ids.append(id17.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK18 is not None:
+            id18 = await CILIK18.get_me()
+            user_ids.append(id18.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK19 is not None:
+            id19 = await CILIK19.get_me()
+            user_ids.append(id19.id)
+    except BaseException:
+        pass
+
+    try:
+        if CILIK20 is not None:
+            id20 = await CILIK20.get_me()
+            user_ids.append(id20.id)
     except BaseException:
         pass
 
