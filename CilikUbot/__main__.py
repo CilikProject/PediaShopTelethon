@@ -20,7 +20,7 @@ from CilikUbot.core.git import git
 
 try:
     client = multicilik()
-    total = 10 - client
+    total = 20 - client
     git()
     LOGS.info(f"Total Clients = {total} User")
 except Exception as e:
