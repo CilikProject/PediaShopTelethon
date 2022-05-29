@@ -32,7 +32,7 @@ from CilikUbot import (
     CILIK17,
     CILIK18,
     CILIK19,
-    CILIK20
+    CILIK20,
     STRING_2,
     STRING_3,
     STRING_4,
