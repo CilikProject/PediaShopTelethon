@@ -235,7 +235,7 @@ def multicilik():
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
-            LOGS.info(str(e
+            LOGS.info(str(e))
 
     if STRING_12:
         try:
