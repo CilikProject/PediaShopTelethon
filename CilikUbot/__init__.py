@@ -126,6 +126,16 @@ STRING_7 = os.environ.get("STRING_7", None)
 STRING_8 = os.environ.get("STRING_8", None)
 STRING_9 = os.environ.get("STRING_9", None)
 STRING_10 = os.environ.get("STRING_10", None)
+STRING_11 = os.environ.get("STRING_11", None)
+STRING_12 = os.environ.get("STRING_12", None)
+STRING_13 = os.environ.get("STRING_13", None)
+STRING_14 = os.environ.get("STRING_14", None)
+STRING_15 = os.environ.get("STRING_15", None)
+STRING_16 = os.environ.get("STRING_16", None)
+STRING_17 = os.environ.get("STRING_17", None)
+STRING_18 = os.environ.get("STRING_18", None)
+STRING_19 = os.environ.get("STRING_19", None)
+STRING_20 = os.environ.get("STRING_20", None)
 
 
 # Logging channel/group ID configuration.
@@ -505,9 +515,169 @@ if STRING_10:
     call_py10 = PyTgCalls(CILIK10)
 else:
     call_py10 = None
-    CILIK10 = None    
+    CILIK10 = None
 
     
+if STRING_11:
+    session11 = StringSession(str(STRING_11))
+    CILIK11 = TelegramClient(
+        session=session11,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py11 = PyTgCalls(CILIK11)
+else:
+    call_py11 = None
+    CILIK11 = None
+
+
+if STRING_12:
+    session12 = StringSession(str(STRING_12))
+    CILIK12 = TelegramClient(
+        session=session12,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py12 = PyTgCalls(CILIK12)
+else:
+    call_py12 = None
+    CILIK12 = None
+
+
+if STRING_13:
+    session13 = StringSession(str(STRING_13))
+    CILIK13 = TelegramClient(
+        session=session13,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py13 = PyTgCalls(CILIK13)
+else:
+    call_py13 = None
+    CILIK13 = None
+
+
+if STRING_14:
+    session14 = StringSession(str(STRING_14))
+    CILIK14 = TelegramClient(
+        session=session14,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py14 = PyTgCalls(CILIK14)
+else:
+    call_py14 = None
+    CILIK14 = None
+
+
+if STRING_15:
+    session15 = StringSession(str(STRING_15))
+    CILIK15 = TelegramClient(
+        session=session15,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py15 = PyTgCalls(CILIK15)
+else:
+    call_py15 = None
+    CILIK15 = None
+    
+    
+if STRING_16:
+    session16 = StringSession(str(STRING_16))
+    CILIK16 = TelegramClient(
+        session=session16,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py16 = PyTgCalls(CILIK16)
+else:
+    call_py16 = None
+    CILIK16 = None
+
+
+if STRING_17:
+    session17 = StringSession(str(STRING_17))
+    CILIK17 = TelegramClient(
+        session=session17,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py17 = PyTgCalls(CILIK17)
+else:
+    call_py17 = None
+    CILIK17 = None
+
+
+if STRING_18:
+    session18 = StringSession(str(STRING_18))
+    CILIK18 = TelegramClient(
+        session=session18,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py18 = PyTgCalls(CILIK18)
+else:
+    call_py18 = None
+    CILIK18 = None
+
+
+if STRING_19:
+    session19 = StringSession(str(STRING_19))
+    CILIK19 = TelegramClient(
+        session=session19,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py19 = PyTgCalls(CILIK19)
+else:
+    call_py19 = None
+    CILIK19 = None    
+
+    
+if STRING_20:
+    session20 = StringSession(str(STRING_20))
+    CILIK20 = TelegramClient(
+        session=session20,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py20 = PyTgCalls(CILIK20)
+else:
+    call_py20 = None
+    CILIK20 = None
+    
+
 async def update_restart_msg(chat_id, msg_id):
     message = (
         f"**Cilik-Userbot v{BOT_VER} is back up and running!**\n\n"
