@@ -42,7 +42,7 @@ from CilikUbot import (
     STRING_8,
     STRING_9,
     STRING_10,
-    STRING_11
+    STRING_11,
     STRING_12,
     STRING_13,
     STRING_14,
