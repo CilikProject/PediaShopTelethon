@@ -23,6 +23,16 @@ from CilikUbot import (
     CILIK8,
     CILIK9,
     CILIK10,
+    CILIK11,
+    CILIK12,
+    CILIK13,
+    CILIK14,
+    CILIK15,
+    CILIK16,
+    CILIK17,
+    CILIK18,
+    CILIK19,
+    CILIK20,
     SUDO_HANDLER,
     SUDO_USERS,
     bot,
@@ -186,6 +196,86 @@ def cilik_cmd(
             CILIK10.add_event_handler(
                 func, events.NewMessage(
                     **args, outgoing=True, pattern=cilik_reg))
+        if CILIK11:
+            if not disable_edited:
+                CILIK11.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK11.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK12:
+            if not disable_edited:
+                CILIK12.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK12.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK13:
+            if not disable_edited:
+                CILIK13.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK13.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK14:
+            if not disable_edited:
+                CILIK14.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK14.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK15:
+            if not disable_edited:
+                CILIK15.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK15.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK16:
+            if not disable_edited:
+                CILIK16.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK16.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK17:
+            if not disable_edited:
+                CILIK17.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK17.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK18:
+            if not disable_edited:
+                CILIK18.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK18.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK19:
+            if not disable_edited:
+                CILIK19.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK19.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
+        if CILIK20:
+            if not disable_edited:
+                CILIK20.add_event_handler(
+                    func, events.MessageEdited(
+                        **args, outgoing=True, pattern=cilik_reg))
+            CILIK20.add_event_handler(
+                func, events.NewMessage(
+                    **args, outgoing=True, pattern=cilik_reg))
         try:
             LOAD_PLUG[file_test].append(func)
         except Exception:
@@ -219,6 +309,26 @@ def cilik_handler(
             CILIK9.add_event_handler(func, events.NewMessage(**args))
         if CILIK10:
             CILIK10.add_event_handler(func, events.NewMessage(**args))
+        if CILIK11:
+            CILIK11.add_event_handler(func, events.NewMessage(**args))
+        if CILIK12:
+            CILIK12.add_event_handler(func, events.NewMessage(**args))
+        if CILIK13:
+            CILIK13.add_event_handler(func, events.NewMessage(**args))
+        if CILIK14:
+            CILIK14.add_event_handler(func, events.NewMessage(**args))
+        if CILIK15:
+            CILIK15.add_event_handler(func, events.NewMessage(**args))
+        if CILIK16:
+            CILIK16.add_event_handler(func, events.NewMessage(**args))
+        if CILIK17:
+            CILIK17.add_event_handler(func, events.NewMessage(**args))
+        if CILIK18:
+            CILIK18.add_event_handler(func, events.NewMessage(**args))
+        if CILIK19:
+            CILIK19.add_event_handler(func, events.NewMessage(**args))
+        if CILIK20:
+            CILIK20.add_event_handler(func, events.NewMessage(**args))
         return func
 
     return decorator
@@ -261,6 +371,26 @@ def chataction(**args):
             CILIK9.add_event_handler(func, events.ChatAction(**args))
         if CILIK10:
             CILIK10.add_event_handler(func, events.ChatAction(**args))
+        if CILIK11:
+            CILIK11.add_event_handler(func, events.ChatAction(**args))
+        if CILIK12:
+            CILIK12.add_event_handler(func, events.ChatAction(**args))
+        if CILIK13:
+            CILIK13.add_event_handler(func, events.ChatAction(**args))
+        if CILIK14:
+            CILIK14.add_event_handler(func, events.ChatAction(**args))
+        if CILIK15:
+            CILIK15.add_event_handler(func, events.ChatAction(**args))
+        if CILIK16:
+            CILIK16.add_event_handler(func, events.ChatAction(**args))
+        if CILIK17:
+            CILIK17.add_event_handler(func, events.ChatAction(**args))
+        if CILIK18:
+            CILIK18.add_event_handler(func, events.ChatAction(**args))
+        if CILIK19:
+            CILIK19.add_event_handler(func, events.ChatAction(**args))
+        if CILIK20:
+            CILIK20.add_event_handler(func, events.ChatAction(**args))
         return func
 
     return decorator
