@@ -22,8 +22,7 @@ from natsort import os_sorted
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 
-from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from CilikUbot import LOGS, TEMP_DOWNLOAD_DIRECTORY
 from CilikUbot.utils import edit_or_reply, humanbytes, cilik_cmd, progress, run_cmd
 from CilikUbot.utils.FastTelethon import download_file, upload_file
 
