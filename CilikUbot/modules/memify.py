@@ -12,11 +12,11 @@ from CilikUbot.utils import cilik_cmd, edit_or_reply, edit_delete, runcmd, take_
 async def memify(event):
     reply_msg = await event.get_reply_message()
     input_str = event.pattern_match.group(1)
-    xx = await edit_or_reply(event, "Processing...")
+    xx = await event.reply("Processing...")
     if not reply_msg:
-        return await edit_delete(xx, "**Balas ke pesan yang berisi media!**")
+        return await edit_delete(xx, "Balas ke pesan yang berisi media!")
     if not reply_msg.media:
-        return await edit_delete(xx, "**Balas ke image/sticker/gif/video!**")
+        return await edit_delete(xx, "Balas ke image/sticker/gif/video!")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     input_file = await event.client.download_media(reply_msg, TEMP_DOWNLOAD_DIRECTORY)
