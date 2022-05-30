@@ -11,7 +11,6 @@
 #
 """ Userbot module containing various scrapers. """
 
-import asyncio
 import io
 import json
 import os
@@ -22,20 +21,14 @@ from asyncio import get_event_loop, sleep
 from glob import glob
 from re import findall, match
 
-import asyncurban
-import barcode
 import emoji
-import qrcode
 import requests
 from aiohttp import ClientSession
-from barcode.writer import ImageWriter
-from bs4 import BeautifulSoup
 from googletrans import LANGUAGES, Translator
 from gtts import gTTS
 from gtts.lang import tts_langs
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from requests import get
 from search_engine_parser import BingSearch, GoogleSearch, YahooSearch
 from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 from telethon.tl.types import (
@@ -43,8 +36,6 @@ from telethon.tl.types import (
     DocumentAttributeVideo,
     MessageMediaPhoto,
 )
-from wikipedia import summary
-from wikipedia.exceptions import DisambiguationError, PageError
 from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
 from yt_dlp.utils import (
@@ -61,11 +52,9 @@ from yt_dlp.utils import (
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import (
     CMD_HELP,
-    LOGS,
     OCR_SPACE_API_KEY,
     REM_BG_API_KEY,
     TEMP_DOWNLOAD_DIRECTORY,
-    bot,
 )
 from CilikUbot.modules.upload_download import get_video_thumb
 from CilikUbot.utils import (
