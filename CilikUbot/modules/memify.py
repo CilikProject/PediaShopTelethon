@@ -39,7 +39,6 @@ async def memify(event):
         if not os.path.lexists(converted_file):
             return await event.edit("**Tidak Dapat Mengurai Video ini.**")
         input_file = converted_file
-    await xx.edit("**Menambahkan Teks...**")
     try:
         final_image = await add_text_img(input_file, input_str)
     except Exception as e:
