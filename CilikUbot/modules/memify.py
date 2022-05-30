@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd, runcmd, take_screen_shot
+from CilikUbot.utils import cilik_cmd, edit_delete, runcmd, take_screen_shot
 
 
 @cilik_cmd(pattern="mmf(?: |$)(.*)")
