@@ -5,14 +5,14 @@ from PIL import Image, ImageDraw, ImageFont
 
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from CilikUbot.utils import cilik_cmd, edit_delete, runcmd, take_screen_shot
+from CilikUbot.utils import cilik_cmd, edit_or_reply, edit_delete, runcmd, take_screen_shot
 
 
 @cilik_cmd(pattern="mmf(?: |$)(.*)")
 async def memify(event):
     reply_msg = await event.get_reply_message()
     input_str = event.pattern_match.group(1)
-    xx = await event.reply("Processing...")
+    xx = await edit_or_reply(event, "Processing...")
     if not reply_msg:
         return await edit_delete(xx, "**Balas ke pesan yang berisi media!**")
     if not reply_msg.media:
