@@ -1,16 +1,17 @@
-import asyncio
-
 from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 
+from CilikUbot import SUDO_USERS, bot, owner
+from CilikUbot.modules.sql_helper.globals import gvarstatus
 from CilikUbot import bot
-
 
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
+        user = await bot.get_me()
         user = await bot.get_sender()
         uid = user.id
         if c_q.query.user_id and (
+            c_q.query.user_id == uid or c_q.query.user_id in SUDO_USERS
             c_q.query.user_id == uid 
         ):
             try:
