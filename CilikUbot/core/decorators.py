@@ -1,7 +1,7 @@
 from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 
-from CilikUbot import bot, sender
+from CilikUbot import bot
 from CilikUbot.modules.sql_helper.globals import gvarstatus
 from CilikUbot import bot
 
