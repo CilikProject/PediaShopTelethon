@@ -413,3 +413,35 @@ async def clean_queue(event):
     if VC_QUEUE.get(chat):
         VC_QUEUE.pop(chat)
     await event.eor("Playlist Deleted Successfully.", time=5)
+
+
+CMD_HELP.update(
+    {
+        "vcplugin": f"**Plugin : **`vcplugin`\
+        \n\n **ᴄᴍᴅ :** `{cmd}play` <Judul Lagu/Link YT>\
+        \n └⋟ Untuk Memutar Lagu di voice chat group dengan akun kamu\
+        \n\n **ᴄᴍᴅ :** `{cmd}vplay` <Judul Video/Link YT>\
+        \n └⋟ Untuk Memutar Video di voice chat group dengan akun kamu\
+        \n\n **ᴄᴍᴅ :** `{cmd}end`\
+        \n └⋟ Untuk Memberhentikan video/lagu yang sedang putar di voice chat group\
+        \n\n **ᴄᴍᴅ :** `{cmd}skip`\
+        \n └⋟ Untuk Melewati video/lagu yang sedang di putar\
+        \n\n **ᴄᴍᴅ :** `{cmd}unmutevc`\
+        \n └⋟ Untuk membunyikan video/lagu yang sedang dimute\
+        \n\n **ᴄᴍᴅ :** `{cmd}mutevc`\
+        \n └⋟ Untuk membisukan pemutaran video/lagu yang sedang diputar\
+        \n\n **ᴄᴍᴅ :** `{cmd}pause`\
+        \n └⋟ Untuk memberhentikan video/lagu yang sedang diputar\
+        \n\n **ᴄᴍᴅ :** `{cmd}resume`\
+        \n └⋟ Untuk melanjutkan pemutaran video/lagu yang sedang diputar\
+        \n\n **ᴄᴍᴅ :** `{cmd}volume` 1-200\
+        \n └⋟ Untuk mengubah volume (Membutuhkan Hak admin)\
+        \n\n **ᴄᴍᴅ :** `{cmd}playlist`\
+        \n └⋟ Untuk menampilkan daftar putar Lagu/Video\
+        \n\n **ᴄᴍᴅ :** `{cmd}delplaylist`\
+        \n └⋟ Untuk menghapus daftar putar Lagu/Video\
+        \n\n **ᴄᴍᴅ :** `{cmd}replay`\
+        \n └⋟ Untuk memutar ulang video/lagu yang sedang diputar\
+    "
+    }
+)
