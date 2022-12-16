@@ -304,7 +304,7 @@ async def mute(event):
             VC_QUEUE.pop(chat_id)
             await event.reply("Music is ended.")
         except Exception as e:
-            await eor(event, "Error: {}".format(e)))
+            await eor(event, "Error: {}".format(e))
     else:
         await event.eor("Not music playing.")
 
