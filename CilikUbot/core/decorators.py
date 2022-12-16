@@ -9,10 +9,10 @@ from CilikUbot.modules.sql_helper.globals import gvarstatus
 
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
-        user = await bot.get_me()
+        user = await bot.get_sender()
         uid = user.id
         if c_q.query.user_id and (
-            c_q.query.user_id == uid or c_q.query.user_id in SUDO_USERS
+            c_q.query.user_id == uid 
         ):
             try:
                 await func(c_q)
@@ -20,14 +20,5 @@ def check_owner(func):
                 await asyncio.sleep(e.seconds + 5)
             except MessageNotModifiedError:
                 pass
-        else:
-            HELP_TEXT = (
-                gvarstatus("HELP_TEXT")
-                or f"Hanya {owner} yang dapat Mengakses Ini!!\nSilahkan Buat UserBot Anda sendiri."
-            )
-            await c_q.answer(
-                HELP_TEXT,
-                alert=True,
-            )
 
     return wrapper
