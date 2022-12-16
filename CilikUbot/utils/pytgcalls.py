@@ -1,7 +1,5 @@
 import asyncio
 import os
-import re
-import traceback
 from time import time
 from traceback import format_exc
 from requests.exceptions import MissingSchema
@@ -13,13 +11,9 @@ from telethon.errors.rpcerrorlist import (
     ChatSendMediaForbiddenError,
 )
 
-from CilikUbot import CMD_HANDLER as HNDLR
 from CilikUbot import LOGS, bot, BOTLOG_CHATID as LOG_CHANNEL
-from CilikUbot.utils import edit_delete as eod, edit_or_reply as eor
 
-from telethon import events
-from telethon.tl import functions, types
-from telethon.utils import get_display_name
+from telethon.tl import functions
 
 try:
     from yt_dlp import YoutubeDL
