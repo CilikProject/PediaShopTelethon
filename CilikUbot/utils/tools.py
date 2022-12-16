@@ -1,3 +1,5 @@
+import aiofiles
+import aiohttp
 import asyncio
 import hashlib
 import os
@@ -6,7 +8,8 @@ import re
 import shlex
 import time
 from os.path import basename
-from typing import Optional, Union
+from typing import Optional, Tuple, Union
+from urllib.request import urlretrieve
 
 from emoji import get_emoji_regexp
 from hachoir.metadata import extractMetadata
@@ -21,6 +24,7 @@ from telethon.tl.types import (
 )
 from yt_dlp import YoutubeDL
 
+from .FastTelethon import download_file as downloadable
 from CilikUbot import LOGS, SUDO_USERS, bot
 from CilikUbot.utils.format import md_to_text, paste_message
 
@@ -81,6 +85,25 @@ def time_formatter(seconds: int) -> str:
         + ((str(seconds) + " detik, ") if seconds else "")
     )
     return tmp[:-2]
+
+
+async def downloader(filename, file, event, taime, msg):
+    with open(filename, "wb") as fk:
+        result = await downloadable(
+            client=event.client,
+            location=file,
+            out=fk,
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d,
+                    t,
+                    event,
+                    taime,
+                    msg,
+                ),
+            ),
+        )
+    return result
 
 
 async def extract_time(man, time_val):
