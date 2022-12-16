@@ -6,8 +6,7 @@ from telethon.tl.types import ChatAdminRights
 from CilikUbot import BOT_VER as version
 from CilikUbot import BOTLOG_CHATID
 from CilikUbot import CMD_HANDLER as cmd
-from CilikUbot import bot, branch, tgbot
-from CilikUbot.utils import HOSTED_ON
+from CilikUbot import bot, tgbot
 from CilikUbot.utils.events import checking
 
 MSG_ON = """
