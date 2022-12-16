@@ -9,6 +9,7 @@ colour
 cloudscraper
 covid
 cowpy
+pyaztro
 deezloader
 dnspython
 emoji
