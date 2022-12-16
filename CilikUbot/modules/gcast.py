@@ -47,8 +47,8 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await event.reply("**Berikan Yanto teks untuk mengGikes 🗿**")
-    kk = await edit_or_reply(event, "`YantoUbot Sedang MengGikes Masseh Angjay 🗿`")
+        return await event.reply("Give some text or reply a message..")
+    kk = await event.reply("Broadcasting...")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -66,7 +66,7 @@ async def gcast(event):
                 except BaseException:
                     er += 1
     await kk.edit(
-        f"**Wushh YantoUbot Berhasil Gikes Ke** `{done}` **Grup, Gagal Mengirim Gikes Ke** `{er}` **Grup**"
+        f"Done in {done} chats, failed to send {er} chat(s)"
     )
 
 
