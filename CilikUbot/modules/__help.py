@@ -27,7 +27,7 @@ DEFAULTUSER = user.first_name
 CUSTOM_HELP_EMOJI = "✘"
 
 
-@cilik_cmd(pattern="helpme ?(.*)")
+@cilik_cmd(pattern="help ?(.*)")
 async def cmd_list(event):
     args = event.pattern_match.group(1)
     if args:
@@ -43,7 +43,6 @@ async def cmd_list(event):
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
-            await event.delete()
         except BaseException:
             await edit_delete(event,
                               f"** Sepertinya obrolan atau bot ini tidak mendukung inline mode. Untuk Mengaktifkanya silahkan ketik .helpme**"
