@@ -871,8 +871,8 @@ with bot:
             query = event.text
             if event.query.user_id == uid and query.startswith("@CilikUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = await event.reply(
-                    f"**Cilik Modules\n    Prefixes: . - ^ !**",
+                result = await event.builder.article(
+                    text = f"**Cilik Modules\n    Prefixes: . - ^ !**",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
