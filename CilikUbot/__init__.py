@@ -789,9 +789,6 @@ with bot:
                     text,
                     buttons=buttons,
                 )
-            else:
-                reply_pop_up_alert = f"Lu ga di izinkan gblk, ini userbot milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
