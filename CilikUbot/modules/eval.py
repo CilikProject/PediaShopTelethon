@@ -23,7 +23,7 @@ p, pp = print, pprint
 async def _(event):
     expression = event.pattern_match.group(1)
     if not expression:
-        return await event.reply("`What should i eval...`")
+        return await event.reply("What grey _-")
     if expression in ("CilikUbot.session", "config.env"):
         return await edit_or_reply(event, "**Itu operasi yang berbahaya! Tidak diperbolehkan!**")
     cmd = "".join(event.message.message.split(maxsplit=1)[1:])
@@ -34,7 +34,7 @@ async def _(event):
         .replace("sendfile", "send_file")
         .replace("editmessage", "edit_message")
     )
-    xx = await event.reply("`Processing...`")
+    xx = await event.reply("Procesing...")
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     old_stderr = sys.stderr
@@ -189,7 +189,7 @@ async def _(event):
                 event.chat_id,
                 out_file,
                 force_document=True,
-                thumb="userbot/resources/logo.jpg",
+                thumb="CilikUbot/resources/logo.jpg",
                 allow_cache=False,
                 reply_to=reply_to_id,
             )
