@@ -769,6 +769,7 @@ with bot:
 
         dugmeler = CMD_HELP
         user = bot.get_sender()
+        owner = user.first_name
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
