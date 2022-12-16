@@ -20,5 +20,14 @@ def check_owner(func):
                 await asyncio.sleep(e.seconds + 5)
             except MessageNotModifiedError:
                 pass
+        else:
+            HELP_TEXT = (
+                gvarstatus("HELP_TEXT")
+                or f"Hanya {owner} yang dapat Mengakses Ini!!\nSilahkan Buat UserBot Anda sendiri."
+            )
+            await c_q.answer(
+                HELP_TEXT,
+                alert=True,
+            )
 
     return wrapper
