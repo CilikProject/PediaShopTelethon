@@ -35,7 +35,7 @@ async def _(pang):
     start = datetime.now()
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await xx.reply(
+    await pang.reply(
         f"**Pong!** \n`%sms`" % (duration)
     ) 
 
