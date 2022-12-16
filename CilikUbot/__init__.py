@@ -784,12 +784,10 @@ with bot:
                 current_page_number = int(looters)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
-                text = f"**Cilik Help Module ❓**\n**Owner :** [{user.first_name}](tg://user?id={user.id})"
+                text = f"**Cilik Modules\n    Prefixes: . - ^ !**"
                 await event.edit(
                     text,
-                    file=ciliklogo,
                     buttons=buttons,
-                    link_preview=False,
                 )
             else:
                 reply_pop_up_alert = f"Lu ga di izinkan gblk, ini userbot milik {owner}"
@@ -873,10 +871,8 @@ with bot:
             query = event.text
             if event.query.user_id == uid and query.startswith("@CilikUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = await event.builder.photo(
-                    file=ciliklogo,
-                    link_preview=False,
-                    text=f"**Cilik Help Module ❓**\n**Owner :** [{user.first_name}](tg://user?id={user.id})",
+                result = await event.reply(
+                    f"**Cilik Modules\n    Prefixes: . - ^ !**",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
