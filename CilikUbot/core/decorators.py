@@ -10,7 +10,7 @@ import asyncio
 from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 
-from CilikUbot import sender, bot, owner
+from CilikUbot import bot, sender
 from CilikUbot.modules.sql_helper.globals import gvarstatus
 
 
