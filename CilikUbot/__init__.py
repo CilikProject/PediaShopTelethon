@@ -768,7 +768,6 @@ with bot:
         from CilikUbot.utils import reply_id
 
         dugmeler = CMD_HELP
-        sender = bot.get_sender()
         user = bot.get_me()
         uid = user.id
         owner = user.first_name
@@ -781,8 +780,7 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
         async def on_plug_in_callback_query_handler(event):
-            sender = await event.get_sender()
-            if event.query.user_id == uid or event.query.user_id in sender:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
@@ -791,6 +789,9 @@ with bot:
                     text,
                     buttons=buttons,
                 )
+            else:
+                reply_pop_up_alert = f"Lu ga di izinkan gblk, ini userbot milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
@@ -964,23 +965,29 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            sender = await event.get_sender()           
-            if event.query.user_id == uid or event.query.user_id in sender:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
+            else:
+                reply_pop_up_alert = (
+                    f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                )
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            sender = await event.get_sender()
-            if event.query.user_id == uid or event.query.user_id in DEVS and sender:
+            if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
                 openlagi = custom.Button.inline(
                     "• Re-Open Menu •", data="reopen")
                 await event.edit(
                     "⚡ **ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴅɪᴛᴜᴛᴜᴘ!** ⚡", buttons=openlagi
                 )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -988,19 +995,19 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            sender = await event.get_sender()
-            if event.query.user_id == uid or event.query.user_id in sender:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
-
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
         async def on_plug_in_callback_query_handler(event):
-            sender = await event.get_sender() 
-            if event.query.user_id == uid or event.query.user_id in sender:
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
@@ -1026,7 +1033,9 @@ with bot:
                 await event.edit(
                     reply_pop_up_alert, buttons=[Button.inline("Back", data="reopen")]
                 )
-
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
