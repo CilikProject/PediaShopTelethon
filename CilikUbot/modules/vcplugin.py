@@ -5,7 +5,7 @@ from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError, MessageIdI
 
 from CilikUbot import CMD_HANDLER as cmd
 from CilikUbot import CMD_HELP, LOGS, INLINE_PIC
-from CilikUbot.utils import cilik_cmd, bash, edit_or_delete as eod, edit_or_reply as eor
+from CilikUbot.utils import bash, cilik_cmd, edit_or_reply as eor
 from CilikUbot.utils.pytgcalls import (
     add_to_queue,
     mediainfo,
