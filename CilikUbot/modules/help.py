@@ -10,7 +10,7 @@ from CilikUbot import CMD_HELP, ICON_HELP
 from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
-@cilik_cmd(pattern="help(?: |$)(.*)")
+@cilik_cmd(pattern="texthelp(?: |$)(.*)")
 async def help(event):
     args = event.pattern_match.group(1)
     if args:
