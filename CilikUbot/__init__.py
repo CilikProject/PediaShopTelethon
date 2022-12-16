@@ -768,7 +768,7 @@ with bot:
         from CilikUbot.utils import reply_id
 
         dugmeler = CMD_HELP
-        sender = await event.get_sender()
+        sender = bot.get_sender()
         user = bot.get_me()
         uid = user.id
         owner = user.first_name
