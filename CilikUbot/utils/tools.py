@@ -1,5 +1,3 @@
-import aiofiles
-import aiohttp
 import asyncio
 import hashlib
 import os
@@ -8,8 +6,7 @@ import re
 import shlex
 import time
 from os.path import basename
-from typing import Optional, Tuple, Union
-from urllib.request import urlretrieve
+from typing import Optional, Union
 
 from emoji import get_emoji_regexp
 from hachoir.metadata import extractMetadata
