@@ -3,8 +3,7 @@ import asyncio
 from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 
-from CilikUbot import SUDO_USERS, bot, owner
-from CilikUbot.modules.sql_helper.globals import gvarstatus
+from CilikUbot import bot
 
 
 def check_owner(func):
