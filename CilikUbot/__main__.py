@@ -23,7 +23,7 @@ try:
     client = multicilik()
     total = 20 - client
     git()
-    LOGS.info(f"Total Clients = {total} User"))
+    LOGS.info(f"Total Clients = {total} User")
     LOGS.info("[✨ BERHASIL DIAKTIFKAN! ✨]")
 except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
     pass
