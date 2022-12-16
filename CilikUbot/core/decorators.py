@@ -1,7 +1,7 @@
 from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 
-from CilikUbot import bot, owner, sender
+from CilikUbot import bot, sender
 from CilikUbot.modules.sql_helper.globals import gvarstatus
 from CilikUbot import bot
 
@@ -30,7 +30,7 @@ def check_owner(func):
         else:
             HELP_TEXT = (
                 gvarstatus("HELP_TEXT")
-                or f"Hanya {owner} yang dapat Mengakses Ini!!\nSilahkan Buat UserBot Anda sendiri."
+                or f"Hanya bos saya yang dapat Mengakses Ini!!\nSilahkan Buat UserBot Anda sendiri."
             )
             await c_q.answer(
                 HELP_TEXT,
