@@ -1,4 +1,7 @@
 
+# cilik-ubot v2
+""" Userbot initialization. """
+
 import logging
 import os
 import re
@@ -779,9 +782,6 @@ with bot:
                     text,
                     buttons=buttons,
                 )
-            else:
-                reply_pop_up_alert = f"Lu ga di izinkan gblk, ini userbot milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
@@ -861,8 +861,9 @@ with bot:
             query = event.text
             if event.query.user_id == uid and query.startswith("@CilikUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = await event.reply(
-                    f"**Cilik Modules\n    Prefixes: . - ^ !**",
+                result = await event.builder.article(
+                    title = "Cilik",
+                    text = f"**Cilik Modules\n    Prefixes: . - ^ !**",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
@@ -960,11 +961,6 @@ with bot:
                 buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
-            else:
-                reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                )
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
@@ -974,9 +970,6 @@ with bot:
                 await event.edit(
                     "⚡ **ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴅɪᴛᴜᴛᴜᴘ!** ⚡", buttons=openlagi
                 )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -990,9 +983,7 @@ with bot:
                 buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
         async def on_plug_in_callback_query_handler(event):
@@ -1022,9 +1013,7 @@ with bot:
                 await event.edit(
                     reply_pop_up_alert, buttons=[Button.inline("Back", data="reopen")]
                 )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
     except BaseException:
         LOGS.info(
