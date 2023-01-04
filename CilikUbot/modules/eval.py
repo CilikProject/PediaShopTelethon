@@ -23,7 +23,7 @@ p, pp = print, pprint
 async def _(event):
     expression = event.pattern_match.group(1)
     if not expression:
-        return await event.reply("What grey _-")
+        return await event.reply("What grey?")
     if expression in ("CilikUbot.session", "config.env"):
         return await edit_or_reply(event, "**Itu operasi yang berbahaya! Tidak diperbolehkan!**")
     cmd = "".join(event.message.message.split(maxsplit=1)[1:])
