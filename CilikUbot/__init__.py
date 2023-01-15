@@ -126,7 +126,7 @@ STRING_20 = os.environ.get("STRING_20", None)
 
 
 # Logging channel/group ID configuration.
-BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID", "-1001687155877")
+BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID", "me")
 
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
@@ -141,7 +141,7 @@ PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "True"))
 PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 
 # Custom Handler command
-CMD_HANDLER = os.environ.get("CMD_HANDLER") or "~"
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"-")
 
