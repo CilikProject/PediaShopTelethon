@@ -1,6 +1,6 @@
 FROM greycilik/cilikuserbot:buster
 
-RUN git clone -b main https://github.com/CilikProject/Ubot-Telethon /home/Ubot-Telethon/ \
+RUN git clone -b main https://github.com/CilikProject/Ubot-Telethon /home/ubot-telethon/ \
     && chmod 777 /home/ubot-telethon \
     && mkdir /home/ubot-telethon/bin/
 
