@@ -24,13 +24,12 @@ async def help(event):
         for i in CMD_HELP:
             string += "`" + str(i)
             string += f"`\t\t\t{ICON_HELP}\t\t\t"
-        await edit_or_reply(
-            event,
-            f"**Jumlah** `{len(CMD_HELP)}` **Modules**\n"
-            f"**Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
-            f"{ICON_HELP}   {string}",
-
-        )
         await event.reply(
-            f"\n**Contoh Ketik** `{cmd}help gcast` **Untuk Melihat Informasi Module Ubot**"
+            "𝗨𝗯𝗼𝘁 𝗠𝗼𝗱𝘂𝗹𝗲𝘀 
+            "🔮 𝗨𝗯𝗼𝘁: -⋟ `alive` -⋟ `gcast` -⋟ `spam` -⋟ `system` -⋟ `update`\n\n\n" 
+            "📮 𝗣𝗿𝗲𝗳𝗶𝘅 -⋟ [ . ]\n"
+            "      .help [module_name]\n"
+            "      Example: .help gcast\n\n"
+            "© __Telethon Version__"
+
         )
