@@ -40,7 +40,7 @@ async def _(pang):
     ) 
 
 
-@cilik_cmd(pattern="yanto$")
+@cilik_cmd(pattern="ubot$")
 async def _(yanto):
     await yanto.reply(
         "**Wusshh YantoUbot Is Alive Masseh Angjay🗿:**\n"
