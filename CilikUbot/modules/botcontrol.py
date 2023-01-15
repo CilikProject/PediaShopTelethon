@@ -164,6 +164,7 @@ async def users(event):
 
 @callback(data=re.compile(b"settings"))
 async def botsettings(event):
+    await event.delete()
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
