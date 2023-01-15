@@ -10,12 +10,12 @@ from CilikUbot import CMD_HELP, ICON_HELP
 from CilikUbot.utils import edit_delete, edit_or_reply, cilik_cmd
 
 
-@cilik_cmd(pattern="texthelp(?: |$)(.*)")
+@cilik_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
     args = event.pattern_match.group(1)
     if args:
         if args in CMD_HELP:
-            await edit_or_reply(event, f"{CMD_HELP[args]}\n\n© @YantoUbot")
+            await edit_or_reply(event, f"{CMD_HELP[args]}")
         else:
             await edit_delete(event, f"`{args}` **Bukan Nama Modul yang Valid.**")
     else:
@@ -26,11 +26,11 @@ async def help(event):
             string += f"`\t\t\t{ICON_HELP}\t\t\t"
         await edit_or_reply(
             event,
-            f"**🗿 Jumlah** `{len(CMD_HELP)}` **Modules**\n"
-            f"**🗿 Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
-            f"{ICON_HELP}   {string}"
-            f"\n\nSupport @YantoUbot",
+            f"**Jumlah** `{len(CMD_HELP)}` **Modules**\n"
+            f"**Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
+            f"{ICON_HELP}   {string}",
+
         )
         await event.reply(
-            f"\n**Contoh Ketik** `{cmd}help Animasi` **Untuk Melihat Informasi Module YantoUbot**"
+            f"\n**Contoh Ketik** `{cmd}help gcast` **Untuk Melihat Informasi Module Ubot**"
         )
