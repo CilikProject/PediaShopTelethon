@@ -1045,12 +1045,12 @@ async def bot_start(event):
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
             \n**Apa ada yang bisa saya bantu?**"
         buttons = [
-            (Button.inline("ᴀᴅᴅ ᴄʟɪᴇɴᴛ", data="multiclient"),
+            (Button.inline("ᴀᴅᴅ ᴄʟɪᴇɴᴛ", data="multiclient"),),
             (
                 Button.inline("ᴘɪɴɢ", data="pingbot"),
                 Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
             ),
-            (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
+            (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
         ]
     try:
         await event.client.send_message(
