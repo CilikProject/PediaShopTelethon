@@ -285,7 +285,7 @@ async def menuclient(event):
                 Button.inline("sᴛʀɪɴɢ 9", data="strnine"),
                 Button.inline("sᴛʀɪɴɢ 10", data="strten"),
             ],            
-            [Button.inline("« ʙᴀᴄᴋ", data="apiset")],
+            [Button.inline("« ʙᴀᴄᴋ", data="settings")],
         ],
     )
 
@@ -728,7 +728,7 @@ async def btly(event):
         await conv.send_message(
             f"**{var} Berhasil di Setting Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
             buttons=get_back_button("apiset"),
-        )
+        
 
 
 @callback(data=re.compile(b"strone"))
@@ -1045,11 +1045,7 @@ async def bot_start(event):
         start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
             \n**Apa ada yang bisa saya bantu?**"
         buttons = [
-            (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
-            (
-                Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                Button.inline("ᴜsᴇʀs", data="users"),
-            ),
+            (Button.inline("ᴀᴅᴅ ᴄʟɪᴇɴᴛ", data="multiclient"),
             (
                 Button.inline("ᴘɪɴɢ", data="pingbot"),
                 Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
