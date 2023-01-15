@@ -164,17 +164,12 @@ async def users(event):
 
 @callback(data=re.compile(b"settings"))
 async def botsettings(event):
-    await event.delete()
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
             message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**",
             buttons=[
-                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
-                (
-                    Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
-                    Button.inline("ᴜsᴇʀs", data="users"),
-                ),
+                (Button.inline("ᴀᴅᴅ ᴄʟɪᴇɴᴛ", data="multiclient"),),
                 (
                     Button.inline("ᴘɪɴɢ", data="pingbot"),
                     Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
