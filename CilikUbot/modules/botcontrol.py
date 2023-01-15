@@ -1050,7 +1050,7 @@ async def bot_start(event):
                 Button.inline("ᴘɪɴɢ", data="pingbot"),
                 Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
             ),
-            (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
+            (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
         ]
     try:
         await event.client.send_message(
