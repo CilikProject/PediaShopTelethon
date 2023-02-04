@@ -307,8 +307,8 @@ API_TOKEN = os.environ.get("API_TOKEN", None)
 API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 # Inline bot helper
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "5197971792:AAG7yX8MIcV3mrZXeX1IRNN5giyrV8tu6Ic")
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "@ciliktapibot")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
 
 # Blacklistcilik
 
