@@ -14,6 +14,14 @@
       "description": "Dapatkan API Hash di web my.telegram.org",
       "required": true 
     },
+    "BOT_TOKEN": {
+      "description": "Dapatkan API KEY di web my.telegram.org Masukan yg APP ID Telegram",
+      "required": true
+    },
+    "BOT_USERNAME": {
+      "description": "Dapatkan API Hash di web my.telegram.org",
+      "required": true 
+    },
      "STRING_SESSION": {
       "description": "Dapatkan String Session di Grup » https://t.me/CilikSupport » Lalu ketik #string",
       "required": true
