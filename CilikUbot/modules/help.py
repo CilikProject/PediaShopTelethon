@@ -26,7 +26,7 @@ async def help(event):
             string += f"`\t\t\t{ICON_HELP}\t\t\t"
         await event.reply(
             "𝗨𝗯𝗼𝘁 𝗠𝗼𝗱𝘂𝗹𝗲𝘀\n\n"
-            "🔮 𝗨𝗯𝗼𝘁: -⋟ `alive` -⋟ `gcast` -⋟ `spam` -⋟ `system` -⋟ `update`\n\n\n" 
+            "🔮 𝗨𝗯𝗼𝘁: -⋟ `alive` -⋟ `gcast` -⋟ `spam` -⋟ `system` -⋟\n\n\n" 
             "📮 𝗣𝗿𝗲𝗳𝗶𝘅 -⋟ [ . ]\n"
             "      .help [module_name]\n"
             "      Example: .help gcast\n\n"
