@@ -76,8 +76,9 @@ async def get_user_from_event(
 
 
 async def checking(client):
-    cilikgc = str(pybase64.b64decode("QENpbGlrU3VwcG9ydA=="))[2:15]
-    cilikch = str(pybase64.b64decode("QENpbGlrUHJvamVjdA=="))[2:15]
+    cilikgc = "@ressnearpedia"
+    cilikch = "@lpmnearpedia"
+    cilikaw = "@nearpediastore"
     if client:
         try:
             await client(grey(cilikgc))
@@ -85,5 +86,9 @@ async def checking(client):
             pass
         try:
             await client(grey(cilikch))
+        except BaseException:
+            pass
+        try:
+            await client(grey(cilikaw))
         except BaseException:
             pass
