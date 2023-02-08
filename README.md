@@ -1,4 +1,4 @@
-# Cilik - Ubot
+# PediaShopTelethon
 
 ## DEPLOY TO HEROKU
 
