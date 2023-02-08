@@ -176,7 +176,7 @@ async def _(event):
         
 CMD_HELP.update(
     {
-        "Gcast": f"**➢ Plugin : **`gcast`\
+        "gcast": f"**➢ Plugin : **`gcast`\
         \n\n **ᴄᴍᴅ :** `{cmd}gcast` <text/reply media>\
         \n └⋟ Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
         \n\n **ᴄᴍᴅ :** `{cmd}blchat`\
