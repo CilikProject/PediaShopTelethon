@@ -13,10 +13,10 @@ import psutil
 from pytgcalls import __version__ as pytgcalls
 from telethon import __version__, version
 
-from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CHANNEL
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, GROUP, StartTime, bot
-from userbot.utils import bash, edit_or_reply, cilik_cmd
+from CilikUbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_NAME, BOT_VER, CHANNEL
+from CilikUbot import CMD_HANDLER as cmd
+from CilikUbot import CMD_HELP, GROUP, StartTime, bot
+from CilikUbot.utils import bash, edit_or_reply, cilik_cmd
 
 from .ping import get_readable_time
 
