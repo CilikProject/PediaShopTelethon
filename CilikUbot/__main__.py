@@ -32,9 +32,9 @@ for module_name in ALL_MODULES:
 
 bot.loop.run_until_complete(cilik_userbot_on())
 LOGS.info(
-    f"Jika Anda Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/CilikSupport")
+    f"Jika Anda Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/resspediashop")
 LOGS.info(
-    f"✨Cilik-Ubot✨ ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
+    f"✨PediaShop-Spambot✨ ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
 idle()
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
