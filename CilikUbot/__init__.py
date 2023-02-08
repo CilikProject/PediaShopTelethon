@@ -149,8 +149,8 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"-")
 OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
 
 # Support
-GROUP = os.environ.get("GROUP", "CilikSupport")
-CHANNEL = os.environ.get("CHANNEL", "CilikProject")
+GROUP = os.environ.get("GROUP", "resspediashop")
+CHANNEL = os.environ.get("CHANNEL", "pediashopping")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -165,7 +165,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/CilikProject/Near-Ubot-Telethon-DelaySpam.git"
+    "UPSTREAM_REPO_URL", "https://github.com/CilikProject/PediaShopTelethon.git"
 )
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "main")
@@ -667,7 +667,7 @@ else:
 
 async def update_restart_msg(chat_id, msg_id):
     message = (
-        f"**Cilik-Userbot v{BOT_VER} is back up and running!**\n\n"
+        f"**PediaShop-Spambot v{BOT_VER} is back up and running!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {owner}"
