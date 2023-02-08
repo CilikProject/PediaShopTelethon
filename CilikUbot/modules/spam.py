@@ -281,7 +281,7 @@ async def dlyspam(event):
 
 CMD_HELP.update(
     {
-        "Spam": f"**Plugin : **`spam`\
+        "spam": f"**Plugin : **`spam`\
         \n\n  •  **Syntax :** `{cmd}spam` <jumlah spam> <text>\
         \n  •  **Function : **Membanjiri teks dalam obrolan!!\
         \n\n  •  **Syntax :** `{cmd}cspam` <text>\
