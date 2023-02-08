@@ -12,7 +12,7 @@ from CilikUbot import CILIK2, CILIK3, CILIK4, CILIK5, CILIK6, CILIK7, CILIK8, CI
 from CilikUbot.utils.events import checking
 
 MSG_ON = """
-🔥 **Cilik - Ubot Berhasil Di Aktifkan**
+🔥 **PediaShop - Spambot Berhasil Di Aktifkan**
 ━━━━━━━━━━━━━━━━
 ➠ **Userbot Version -** `{}@{}`
 ➠ **Ketik** `{}ping` **untuk Mengecheck Bot**
